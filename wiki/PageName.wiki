@@ -12,21 +12,22 @@ Add your content here.  Format your content with:
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
 
-Non-FUnctional Requirements
+==Non-Functional Requirements==
 
-   Technology platform should be supported for the next 5-7 years.
+   *Technology platform should be supported for the next 5-7 years*
  	Application Language Version
 	Database Version
 	Application Server Version
 	Rules Engine Version, Enterprise Service Bus Version
 
-    Design must
+    *Design must*
 	Be Service Oriented Architecture (SOA) base
 	support widget base framework - reusable components
 
-    Application must 
+    *Application must*
 	Rich User Interface
-        Incorporate eCommerce Annalytics Requirements e.g. WebTrendz, Google Analytics
+        Incorporate eCommerce Analytics Requirements e.g.WebTrendz,    Google Analytics
+
 	Incorporate SEO guidelines for the Online Travel Portal
 	
 	support HTTP, HTTPS (SSL) protocols
@@ -45,18 +46,18 @@ Non-FUnctional Requirements
 		Open Office 3.1 onwards
 
 
-  Reports
+  *Reports*
 	Standard Template for Operation reports
-	Standard template for Standard Outputs i.e. Voucher, Invoice, Indents
+	Standard template for Standard Outputs i.e. Voucher, Invoice,    Indents
 	Standard template for MIS reports
 	Shoudl support export to Spreadsheet, PDF
 
-  Printing
+  *Printing*
 	Reporting Solution/Application should support direct printing (without view)
 	Reporting Solution/Application should support batch printing
 	Reporting Solution/Application should support Dot Matrix, Desk Jet Laser Jet printing
 
-  Access Control
+  *Access Control*
    	Application should be completely Access Control to the level of fields (where required) - have the ability to enable/disable fields on the UI as well - this should be Database driven
         Databsee design should also be access driven - read/write access to be defined to avoid the unintentional delete/update by developers
 
