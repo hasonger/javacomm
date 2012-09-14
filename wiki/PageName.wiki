@@ -14,17 +14,17 @@ Add your content here.  Format your content with:
 
 ==Non-Functional Requirements==
 
-   * Technology platform should be supported for the next 5-7 years *
+   === Technology platform should be supported for the next 5-7 years ===
  	Application Language Version
 	Database Version
 	Application Server Version
 	Rules Engine Version, Enterprise Service Bus Version
 
-    *Design must*
+    ===Design must===
 	Be Service Oriented Architecture (SOA) base
 	support widget base framework - reusable components
 
-    *Application must*
+    ===Application must===
 	Rich User Interface
         Incorporate eCommerce Analytics Requirements e.g.WebTrendz,    Google Analytics
 
@@ -46,7 +46,7 @@ Add your content here.  Format your content with:
 		Open Office 3.1 onwards
 
 
-  *Reports*
+    ===Reports===
 	Standard Template for Operation reports
 	Standard template for Standard Outputs i.e. Voucher, Invoice,    Indents
 	Standard template for MIS reports
