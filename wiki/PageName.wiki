@@ -22,47 +22,45 @@ Add your content here.  Format your content with:
   * Enterprise Service Bus Version
 
     ===Design must===
-	Be Service Oriented Architecture (SOA) base
-	support widget base framework - reusable components
+  * Be Service Oriented Architecture (SOA) base
+  * support widget base framework - reusable components
 
     ===Application must===
-	Rich User Interface
-        Incorporate eCommerce Analytics Requirements e.g.WebTrendz,    Google Analytics
+  * Rich User Interface
+  * Incorporate eCommerce Analytics Requirements e.g.WebTrendz,    Google Analytics
 
-	Incorporate SEO guidelines for the Online Travel Portal
-	
-	support HTTP, HTTPS (SSL) protocols
-	Support integration with Maps e.g. Google Maps, Bing Maps etc.
-	Support Multilingual capability (Should be based on regions or locale)
-	Support Multi-Channel (e.g. B2C, B2B - Branch, Agents, Franchisee, Call Centre)
-        Support Multi-Organization -> Multi Market
-        Support Mutiple point of Sales -> PC/Laptop, Web Browsers (As list below), PDA, Kiosks
-	Support multiple browsers viz IE 6.0+, Mozilaa Firefox 2.0+, Netscape, Safari, Google Chrome, Opera
-	Support mulitple Operating systems
-		Windows 7, Windows XP, Windows Vista, Unix, Linux, Macintosh
-	Must incorporate Data Compression logic to minimise network bandwidth usage
-	Must incorporate Data encryption logic for critical/sensitive information e.g. User ID, Password etc
-	Must support the following Office Application (integration)
-		MS Office 2000, MS Office 2003, MS Office 2007
-		Open Office 3.1 onwards
-
+  * Incorporate SEO guidelines for the Online Travel Portal
+  * support HTTP, HTTPS (SSL) protocols
+  * Support integration with Maps e.g. Google Maps, Bing Maps etc.
+  * Support Multilingual capability (Should be based on regions or locale)
+  * Support Multi-Channel (e.g. B2C, B2B - Branch, Agents, Franchisee, Call Centre)
+  * Support Multi-Organization -> Multi Market
+  * Support Mutiple point of Sales -> PC/Laptop, Web Browsers (As list below), PDA, Kiosks
+  * Support multiple browsers viz IE 6.0+, Mozilaa Firefox 2.0+, Netscape, Safari, Google Chrome, Opera
+  * Support mulitple Operating systems
+  * Windows 7, Windows XP, Windows Vista, Unix, Linux, Macintosh
+  * Must incorporate Data Compression logic to minimise network bandwidth usage
+  * Must incorporate Data encryption logic for critical/sensitive information e.g. User ID, Password etc
+  * Must support the following Office Application (integration)
+  * MS Office 2000, MS Office 2003, MS Office 2007
+  * Open Office 3.1 onwards
 
     ===Reports===
-	Standard Template for Operation reports
-	Standard template for Standard Outputs i.e. Voucher, Invoice,    Indents
-	Standard template for MIS reports
-	Shoudl support export to Spreadsheet, PDF
+  * Standard Template for Operation reports
+  * Standard template for Standard Outputs i.e. Voucher, Invoice,    Indents
+  * Standard template for MIS reports
+  * Should support export to Spreadsheet, PDF
 
-  *Printing*
-	Reporting Solution/Application should support direct printing (without view)
-	Reporting Solution/Application should support batch printing
-	Reporting Solution/Application should support Dot Matrix, Desk Jet Laser Jet printing
+  ===Printing===
+   * Reporting Solution/Application should support direct printing (without view)
+  * Reporting Solution/Application should support batch printing
+  * Reporting Solution/Application should support Dot Matrix, Desk Jet Laser Jet printing
 
-  *Access Control*
-   	Application should be completely Access Control to the level of fields (where required) - have the ability to enable/disable fields on the UI as well - this should be Database driven
-        Databsee design should also be access driven - read/write access to be defined to avoid the unintentional delete/update by developers
+  ===Access Control===
+  * Application should be completely Access Control to the level of fields (where required) - have the ability to enable/disable fields on the UI as well - this should be Database driven
+  * Database design should also be access driven - read/write access to be defined to avoid the unintentional delete/update by developers
 
-  All Data types to be standardised on screens and reports with fields lengths e.g.
+  * All Data types to be standardised on screens and reports with fields lengths e.g.
 	Numeric with decimals for Amounts (upto 2 decimals)
 	Field for Rate of Exchanges (upto 6 decimals)
 	Text Fields, Remarks Fields
