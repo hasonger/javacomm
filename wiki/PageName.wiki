@@ -14,7 +14,7 @@ Add your content here.  Format your content with:
 
 ==Non-Functional Requirements==
 
-   *Technology platform should be supported for the next 5-7 years*
+   * Technology platform should be supported for the next 5-7 years *
  	Application Language Version
 	Database Version
 	Application Server Version
