@@ -59,25 +59,24 @@ Add your content here.  Format your content with:
   ===Access Control===
   * Application should be completely Access Control to the level of fields (where required) - have the ability to enable/disable fields on the UI as well - this should be Database driven
   * Database design should also be access driven - read/write access to be defined to avoid the unintentional delete/update by developers
-
   * All Data types to be standardised on screens and reports with fields lengths e.g.
-	Numeric with decimals for Amounts (upto 2 decimals)
-	Field for Rate of Exchanges (upto 6 decimals)
-	Text Fields, Remarks Fields
-	Round-off logic to be stanardised across the application
-	All reports and screens to have a standard war of representing the data
+  * Numeric with decimals for Amounts (upto 2 decimals)
+  * Field for Rate of Exchanges (upto 6 decimals)
+  * Text Fields, Remarks Fields
+  * Round-off logic to be stanardised across the application
+  * All reports and screens to have a standard war of representing the data
 
-   Application should support mulitple data output such as HTML, XML, JSON etc. It should have the capability to display the content output based on mulitiple platform, e.g. mobile.
-   Applicaiton to store the amounts of local currency along with the currency in which it has been sold/quoted to the customer.
+  * Application should support mulitple data output such as HTML, XML, JSON etc. It should have the capability to display the content output based on multiple platform, e.g. mobile.
+  * Application to store the amounts of local currency along with the currency in which it has been sold/quoted to the customer.
 
 
+  ===Scalibility - Design should support===
+  * Multi-company capability
+  * Mulit-geography capability
+  * Mulit-market capability
+  * Multi pont of sale capability
 
-   Scalibility - Design should support
-        Multi-company capability
-	Mulit-geography capability
-	Mulit-market capability
-	Multi pont of sale capability
-   Reliablity
+    Reliablity
 	Should have a fail-over mechanism (Application clustering, database clustering)
 	should have disaster recovery mechanism (in cas Primay Site goes doawn, the DR site should automatically take over)
    Database
