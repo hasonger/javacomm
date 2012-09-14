@@ -12,5 +12,353 @@ Add your content here.  Format your content with:
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
 
+Non-FUnctional Requirements
 
-Hello
+   Technology platform should be supported for the next 5-7 years.
+ 	Application Language Version
+	Database Version
+	Application Server Version
+	Rules Engine Version, Enterprise Service Bus Version
+
+    Design must
+	Be Service Oriented Architecture (SOA) base
+	support widget base framework - reusable components
+
+    Application must 
+	Rich User Interface
+        Incorporate eCommerce Annalytics Requirements e.g. WebTrendz, Google Analytics
+	Incorporate SEO guidelines for the Online Travel Portal
+	
+	support HTTP, HTTPS (SSL) protocols
+	Support integration with Maps e.g. Google Maps, Bing Maps etc.
+	Support Multilingual capability (Should be based on regions or locale)
+	Support Multi-Channel (e.g. B2C, B2B - Branch, Agents, Franchisee, Call Centre)
+        Support Multi-Organization -> Multi Market
+        Support Mutiple point of Sales -> PC/Laptop, Web Browsers (As list below), PDA, Kiosks
+	Support multiple browsers viz IE 6.0+, Mozilaa Firefox 2.0+, Netscape, Safari, Google Chrome, Opera
+	Support mulitple Operating systems
+		Windows 7, Windows XP, Windows Vista, Unix, Linux, Macintosh
+	Must incorporate Data Compression logic to minimise network bandwidth usage
+	Must incorporate Data encryption logic for critical/sensitive information e.g. User ID, Password etc
+	Must support the following Office Application (integration)
+		MS Office 2000, MS Office 2003, MS Office 2007
+		Open Office 3.1 onwards
+
+
+  Reports
+	Standard Template for Operation reports
+	Standard template for Standard Outputs i.e. Voucher, Invoice, Indents
+	Standard template for MIS reports
+	Shoudl support export to Spreadsheet, PDF
+
+  Printing
+	Reporting Solution/Application should support direct printing (without view)
+	Reporting Solution/Application should support batch printing
+	Reporting Solution/Application should support Dot Matrix, Desk Jet Laser Jet printing
+
+  Access Control
+   	Application should be completely Access Control to the level of fields (where required) - have the ability to enable/disable fields on the UI as well - this should be Database driven
+        Databsee design should also be access driven - read/write access to be defined to avoid the unintentional delete/update by developers
+
+  All Data types to be standardised on screens and reports with fields lengths e.g.
+	Numeric with decimals for Amounts (upto 2 decimals)
+	Field for Rate of Exchanges (upto 6 decimals)
+	Text Fields, Remarks Fields
+	Round-off logic to be stanardised across the application
+	All reports and screens to have a standard war of representing the data
+
+   Application should support mulitple data output such as HTML, XML, JSON etc. It should have the capability to display the content output based on mulitiple platform, e.g. mobile.
+   Applicaiton to store the amounts of local currency along with the currency in which it has been sold/quoted to the customer.
+
+
+
+   Scalibility - Design should support
+        Multi-company capability
+	Mulit-geography capability
+	Mulit-market capability
+	Multi pont of sale capability
+   Reliablity
+	Should have a fail-over mechanism (Application clustering, database clustering)
+	should have disaster recovery mechanism (in cas Primay Site goes doawn, the DR site should automatically take over)
+   Database
+	Application should be databse agnostic
+	Tables should be properly normalized, indexed, with appropriate primary key, foreign key relationship defined between Master-Child tables.
+	Delete functionality should be CASCADE Delete (if any)
+   Batch Process
+	PLatform should have ability to run processes in Batch mode
+
+   Number of Councurrent users
+       Web Portal - 100-150
+	Back Office/Mid-Office User Interface - 100-150
+	Enterprise Service Bus - 250
+
+   Number of transactions per second
+	Web Portal - 10,000+
+	Front Office - 500-750
+	Back Office - Mid Office - 500-750
+
+   Response Time
+	Masters - normal load - 2 seconds, peak load - 4 seconds
+	Transactions - normal load 3 seconds, peak load - 5 seconds
+
+   Application to support Single Commit and Rollback
+   Enterprise Service Bus
+	should support synchronous and Asynchronous calls to multiple APIs
+	Must have the ability to provide data in a consolidated form
+	
+
+   Logging
+	Should have a logging mechanism to trace various activities e.g. USer Login, Request and Response times etc
+	should be database driven\
+	should be funcitonality based
+	should have the ability to switch on and off per functionality
+	will need to have all logs including Payment Gateways.
+	Response to be stored at our end. Supplier Logs to calculate L:B (Supplier wise) for audit and verification purpose
+
+  Achive
+	SHould have the ability to archive the data based on functionality including all dependencies
+	should have the ability to point the application to archive date
+	Archive period - 1 year
+	Retention period - 9 years
+
+   Business Continuioty PLan 
+	should have a provision to enter back dated transactions (Restricted access)
+
+   Security
+	Should not allow screen scrapping
+	should be SSL supported
+
+
+
+
+
+NFR ID : 1
+Category: Usablity
+SUb Category: Electronic Documents in Court of Law
+Question :  Are there any legal requirements that must be met when documents are produced by the system?
+Required Description: Yes, Terms and Condition, Invoice, Vouchers, BTQ forms, Booking Forms
+Measure: NA
+
+
+NFR ID : 2
+Category: Usablity
+SUb Category: Language SUpport
+Question :  
+Requirement Description: Multilingual support
+Measure: NA
+
+NFR ID : 3
+Category: Usablity
+SUb Category: Multiple Browser Support
+Question :  
+Requirement Description: Internet Explorer 6.0+, MOzilla, Firefox 2.0+, Safari 4.x, Google Chrome, Opera
+Measure: NA
+
+NFR ID : 4
+Category: Usablity
+SUb Category: Pop up Screens
+Question :  Is there any explicit requirement for popup screens usage?
+Requirement Description: Yes
+Measure: NA
+
+NFR ID : 5
+Category: Usablity
+SUb Category: Screen Sizes
+Question :  What is the target User Interface Resolution?
+Requirement Description: 1024 X 768, for Web Based UI. Resulution should be % driven and not fixed (Adjustment to any resolution)
+Measure: NA
+
+
+NFR ID : 6
+Category: Usablity
+SUb Category: Date Formates
+Question :  Should the local calendar be used/presented to the user, rather than the Gregorian calendar? e.g. Japan and Thailand have their own calendar.
+Requirement Description: Yes
+Measure: NA
+
+
+NFR ID : 7
+Category: Operationality
+SUb Category: Back up/Recovery
+Question :  The operations team need to be able to take point in time backups for offsite storage and Business COntinuitty. What are the time-windows for this requirement.
+Requirement Description: 
+Measure: NA
+
+
+NFR ID : 8
+Category: Operationality
+SUb Category: Batch Window
+Question :  What are batch time-windows for existing systems? What are the number, intensity, duration and resource utilization for the same?
+Requirement Description: 1. Duration Pririty - should be databse parameter driven. 2- Number of batch processes - 50+
+Measure: NA
+
+NFR ID : 9
+Category: Operationality
+SUb Category: Life Span of System
+Question :  What is the system life expentancy? WHat is the annual rise in transaction volumes perceived?
+Requirement Description: 1. 5-7 years post go-live 2. 30-50%
+Measure: NA
+
+
+NFR ID : 10
+Category: Operationality
+SUb Category: Monitoring
+Question : would the system need to alert administrators of errors? If Yes, what is the mode of operation?
+Requirement Description: 1. E-Mail 2. SMS
+Measure: NA
+
+NFR ID : 11
+Category: Operationality
+SUb Category: Session Timeouts
+Question : WHat is the default session timeout for the users of the system?
+Requirement Description: 30 
+Measure: minutes
+
+NFR ID : 12
+Category: Performance
+SUb Category: Number of Users
+Question : What is the user base size of the application?
+Requirement Description: Currently 2000, Growth of another 3000 in the next 5-7 years
+Measure: NUmber of users
+
+
+NFR ID : 13
+Category: Performance
+SUb Category: Logged in users
+Question : What is the number of peak logged in users?
+Requirement Description: 50% of the total user base size.
+Measure: Number of logged in users
+
+NFR ID : 14
+Category: Performance
+SUb Category: Concurrency
+Question : What is the expected average concurrency of the system?
+Requirement Description: 500-750 per transaction type
+Measure: NUmber of concurrent users per system
+
+NFR ID : 15
+Category: Performance
+SUb Category: Response Times
+Question : 1. What should be the average response times for a screen display for the user? 2.What should be the average response time for a screen for a screen with more demanding user inerfaces? Note: The above crieteria does not apply to MIS reports and repoirts in general.
+Requirement Description: 1. Masters - normal load 2 seconds, peak load - 4 seconds 2. Transactions (Demanding user inerfaces) - normal load 3 sconed, peak load - 5 seconds
+Measure: Average Response time
+
+
+NFR ID : 16
+Category: Performance
+SUb Category: Throughput
+Question : What is the throughput expected from the system? And what should it be capable of scaling up to? (e.g. the system should be able to process very much high volume of transactions  in single day typically 5 millions. However it should be scalable to handle 10 millions or more transactions)
+Requirement Description: 
+Measure: No of business transaction records processed
+
+
+NFR ID : 17
+Category: Failover
+SUb Category: Continuity
+Question : What is the level and type of connectivity of the primary site to the DR site? (10 mbps pipe)
+Requirement Description: 
+Measure: NA
+
+NFR ID : 18
+Category: Failover
+SUb Category: Continuity
+Question : What is the maximum time allowed for operations to commence from the DR site?
+Requirement Description: 6 hours
+Measure: hours/days
+
+
+NFR ID : 19
+Category: Failover
+SUb Category: Continuity
+Question : What is the data freshness required at the DR site?
+Requirement Description: 1 hour
+Measure: hours/days 
+
+NFR ID : 20
+Category: Reliability
+SUb Category: Availability
+Question : 
+Requirement Description: Calculated from above
+Measure: MTBF/(MTBF+MTTR) 
+
+
+NFR ID : 21
+Category: Reliability
+SUb Category: Mean Time between failures
+Question : What is the MTBF? e.g. (THe system outage should not recur for a period of 1 months.)
+Requirement Description: 3 months
+Measure: no of months
+
+
+NFR ID : 22
+Category: Reliability
+SUb Category: Mean Time to Repair
+Question : What is the unplanned outage time limit? (e.g. 2 hours)
+Requirement Description: 2 hours
+Measure: no. of hours
+
+
+NFR ID : 23
+Category: Security
+SUb Category: Security
+Question : DOes application require integration with existing Enterpise identity Management solutions like Kerberos, Active Directory, LDAP.
+Requirement Description: Yes, should be able to support single sign on (SSO) using any of the mentioned solutions
+Measure: NA
+
+NFR ID : 24
+Category: Security
+SUb Category: Security
+Question : Does the application need to encrypt the data instorage?
+Requirement Description: Yes, Passwords and some other information e.g. social security number, PAN number etc
+Measure: NA
+
+NFR ID : 25
+Category: Security
+SUb Category: Security
+Question : Does the application have any regulatory or compliance requirement? HIPPA, PCI, GLBA, SOX
+Requirement Description: PCI - Yes, SOX - May be
+Measure: NA
+
+NFR ID : 26
+Category: Security
+SUb Category: Security
+Question : Will the compliance be measured by a third party or government authority?
+Requirement Description: Yes
+Measure: NA
+
+
+NFR ID : 27
+Category: Security
+SUb Category: Security
+Question : Will access to workstations be restricted and monitored in the user environment?
+Requirement Description: 
+Measure: NA
+
+NFR ID : 28
+Category: Archiving
+SUb Category: Archiving
+Question : What is the data archival policy for the organization/system?
+Requirement Description: 1. Masters - 1 year, 2. Transaction - last 1 year
+Measure: NA
+Archived data is accessible but not necessary on-line
+
+NFR ID : 29
+Category: Archiving
+SUb Category: Archiving
+Question : Will the archived data be visible to the users? will this data be necessary for reporting requirements?
+Requirement Description: Yes - should be access driven
+Measure: NA
+
+NFR ID : 30
+Category: Data Retention
+SUb Category:  Data Retention
+Question : What is the data retention policy for the organization/system?
+Requirement Description: Last 7 years.
+Measure: NA
+
+NFR ID :
+Category: 
+SUb Category:
+Question :
+Required Description:
+Measure:
