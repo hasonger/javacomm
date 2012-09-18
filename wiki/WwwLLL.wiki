@@ -16,3 +16,14 @@ There is one point which we missed to discuss yesterday on the credentials. Note
   # Logos on the footer for VeriSign etc 
   # Email ids for emails sent from the application.
   # Currency
+
+
+
+
+
+
+
+
+Path Considerations
+  # Path of the URL should not expose that the website is a White Label
+  # White Label will be extended to one level of B2B only. E.g. Liberty Travels is a B2B Agent operating in all 3 ways. Liberty Travels also has sub agents defined. As such, these sub-agents will not see a different facade in case of White Labels option... 
