@@ -1,15 +1,15 @@
 = Following elements in the current system are configurable for WL:  =
--	Location of  Links such as Contact Us, Member Login, Toll Free Numbers, Logo
--	Content of the links such as Contact details, Toll Free numbers can be changed.
--	Logos on headers, invoices, vouchers.
--	All logos on documentation that will be sent to end consumer.
--	Payment Gateway terminal name.
--	SEO Content on the Home Page 
--	LHS and RHS
--	Country city list on the home pages, registration pages, billing pages.
--	Fav Icon 
--	Footer links to be  placed on the footer ( addition/ deletion)
--	Static content  on the footer links. 
--	Logos on the footer for VeriSign etc 
--	Email ids for emails sent from the application.
--	Currency
+#Location of  Links such as Contact Us, Member Login, Toll Free Numbers, Logo
+#Content of the links such as Contact details, Toll Free numbers can be changed.
+#	Logos on headers, invoices, vouchers.
+#	All logos on documentation that will be sent to end consumer.
+#	Payment Gateway terminal name.
+#	SEO Content on the Home Page 
+#	LHS and RHS
+#	Country city list on the home pages, registration pages, billing pages.
+#	Fav Icon 
+#	Footer links to be  placed on the footer ( addition/ deletion)
+#	Static content  on the footer links. 
+#	Logos on the footer for VeriSign etc 
+#	Email ids for emails sent from the application.
+#	Currency
