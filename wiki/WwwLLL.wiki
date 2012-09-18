@@ -1,3 +1,5 @@
+There is one point which we missed to discuss yesterday on the credentials. Note that when we do a white label for B2C, the credentials that need to be used will be the B2C credentials of the suppliers. Similarly , when we do a White label for B2B, the credentials used should be that of B2B of. the suppliers. The same extends for the MARKETS and we need to use the market wise credentials  wherever applicable.
+
 = Following elements in the current system are configurable for WL:  = 
 
   # Location of  Links such as Contact Us, Member Login, Toll Free Numbers, Logo
