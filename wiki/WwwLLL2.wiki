@@ -1,0 +1,67 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
+
+=White Label=
+==Business Model==
+  * Client who need white label interface will be defined in Travel ERP as normal client
+  * Sales team will create the client in SAP as well as Travel ERP
+    * Basic client details as mentioned in requirements will be capture at this level
+     # General details
+     # Product / Supplier preferences – Superset
+     # Bank details
+     # Roles assigned
+    * While selection of interfaces, client have following options: (One or Many- Every interface will have separate logins)
+     # Affiliate website / Client Extranet
+     # B2B White Label
+     # B2C White label
+     # RXML
+     # ASP
+     # ….. (as mentioned in RA Structure)
+    * If White Label is selected as an option, admin user ID and password will be sent to client for generation of white label website post approval
+  * Company Commercial for such clients can be defined at the level of Client Type + Client + Channel/Interface
+  * Various commercials as mentioned in requirement are applicable under company commercials
+    * Client Commercials – Client will be able define his commercials and extend it to his sub agents (B2B2N)
+    * Client settlement is limited to 1st level client only. For remaining sub-agents, Travel ERP will provide the reports only. These requirements have been mentioned in details under B2B2B2N model by Sunil
+==Setup White Label==
+  * Post receiving email from CNK, client admin will click on the link provided in email for white label website generation
+  * White labels are of 2 types
+     * Standard White label
+     * Customized White label
+  * White labels w ill be extended to only 1st level Clients
+  * White Label setup process should be 4-5 step process
+     * Step 1: Select layout &  provide required details to support the layout – Style sheet, Header, Footer, images
+     * Step 2: Select products from superset assigned to the client
+        # In case of customized white labels this step will more elaborated
+            # Selection of product attributes 
+               # Hotel  – 4 &5 Star hotel only
+               # Insurance required with Air or not
+            # Selection of Suppliers
+            # Shopping cart – Yes/No
+            # Combination product customization
+            # Login flow customization
+            # Time Limit Flow customization
+            # Profile customization
+            # View Transaction  customization
+            # Online Cancellation customization
+            # Online amendment customization
+            # ……..
+            # MIS
+            # Fulfilment
+            # Data Export
+            # Holiday packages
+            # Payment gateway
+        # Step 3: Select the required email, invoice templates and customize the editable company specific information such as logo, header, footer, content  etc 
+        # Step 4: Provide URL linking
+        # Generate the website
