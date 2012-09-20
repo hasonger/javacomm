@@ -1,7 +1,7 @@
 =White Label=
 ==Business Model==
-  * Client who need white label interface will be defined in Travel ERP as normal client
-  * Sales team will create the client in SAP as well as Travel ERP
+  * Client who need white label interface will be defined in Tr ERP as normal client
+  * Sales team will create the client in SAP as well as Tr ERP
     * Basic client details as mentioned in requirements will be capture at this level
      # General details
      # Product / Supplier preferences – Superset
@@ -18,7 +18,7 @@
   * Company Commercial for such clients can be defined at the level of Client Type + Client + Channel/Interface
   * Various commercials as mentioned in requirement are applicable under company commercials
     * Client Commercials – Client will be able define his commercials and extend it to his sub agents (B2B2N)
-    * Client settlement is limited to 1st level client only. For remaining sub-agents, Travel ERP will provide the reports only. These requirements have been mentioned in details under B2B2B2N model by Sunil
+    * Client settlement is limited to 1st level client only. For remaining sub-agents, Tr ERP will provide the reports only. These requirements have been mentioned in details under B2B2B2N model by Sunil
 ==Setup White Label==
   * Post receiving email from CNK, client admin will click on the link provided in email for white label website generation
   * White labels are of 2 types
