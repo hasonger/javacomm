@@ -62,6 +62,6 @@ Add your content here.  Format your content with:
             # Data Export
             # Holiday packages
             # Payment gateway
-        # Step 3: Select the required email, invoice templates and customize the editable company specific information such as logo, header, footer, content  etc 
-        # Step 4: Provide URL linking
-        # Generate the website
+     * Step 3: Select the required email, invoice templates and customize the editable company specific information such as logo, header, footer, content  etc 
+     * Step 4: Provide URL linking
+     * Generate the website
