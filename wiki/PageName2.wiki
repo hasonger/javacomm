@@ -1,0 +1,74 @@
+High Avaialability / Fault Tolerance Questionare
+1. How much data loss is acceptible?
+2. What is acceptible recovery time? How much downtime can you afford in case of a failure?
+3. What is budget for database fault - tolerance/high availability solution?
+4. Are there dependant databses?
+5. Are there tables that are modified more than others?
+6. What is size of databases that needs to be backed up?
+7. What is the maintenance window for the creation of backup?
+8. What media will be used of backup?
+9. Does your application require recovery to the last backup or to a point in time?
+	a. If point -in - time what transaction log back interval do you require ?
+10. What, if any, is your retention requirement for past backups?
+11. Are the backups regularly tested so they are working? Have you ever trie to recover data from your current backup system?
+12. Are the backups monitored for failure? Do you get notificaiton of success or error in backup on daily basis?
+13. Do have a system in place that alleviates human error?
+14. Can you recover lost data if your offices are not accessible?/ can you access backed up data from remote location?
+15. can you gauranteed that your backed up data is secure and proprietary? is the  databack  up media (i.e. Harddrive or tapes ) are transferred in secure, controlled manner since it contains all data for your entire business ?
+16. Is your system immune to compute viruses that could wipe out your harddrive?
+17. Can you predicts or controll hardware malfunctions?
+
+
+
+
+Documentation & Training 
+	What kind of documentation is required and who will be the users of the documentation? 
+	How quickly should a brand new user be up and running on the system? 
+	Is there a need for context sensitive help? 
+Performance Characteristics 
+	Are there any speed, throughput, or response time constraints on the system? 
+	Are there size or capacity constraints on the data to be processed by the system? 
+	Do performance requirements vary by: time of day, day of the week, type of user, etc.? 
+Error Handling and Extreme Conditions 
+	How should the system respond to input errors? 
+	Is there a need to track errors via a mechanism such as error logging? 
+	Are there expectations on reporting errors: per categories, by business channel, etc.? 
+External Interfaces & Interoperability 
+	Is there data coming from (going to) external systems? 
+	Are there restrictions on the format or medium that must be used for input or output? 
+	How must the data exchange with external systems function: real-time, hourly, daily, etc.? 
+System Modifications 
+	What parts of the system are likely candidates for later modification? 
+	What types of modifications are expected? 
+	How often do you expect the system will need to be modified? 
+Security 
+	What data managed by the system must be secure? 
+	Who, when, where should be able to access the system? 
+	is A single password required to log in to access all your applications?
+	
+Disaster Recovery & Business Continuity 
+	How often will the system be backed up? 
+	Who will be responsible for the back up? 
+	What data must be saved in case of a disaster? 
+	How quickly after a major disaster must the system be up and running? 
+	What is the acceptable system downtime per 24-hour period? 
+
+
+	
+“Search items” user story		
+	what is expected average response time?	1 sec
+	what is the max response time that is acceptable?	5 sec
+	are there times during the day when slower response time is acceptable? Is so, what times?	No
+“Receive notifications” user story		
+	how soon should the user receive a notification after an item is shipped?	1 hr
+	what is the longest acceptable delay in sending it?	12 hrs
+
+
+“Search items” user story		
+	should the search functionality be secured?	no
+	if so, how should the users be authenticated?	n/a
+	are there different types of users accessing this functionality? explain?	n/a
+“Receive notification” user story		
+	how should the notification be received by the user?	email
+	should the notification sending mechanism be secured?	no
+	are there guaranteed delivery expectations? explain?	no
