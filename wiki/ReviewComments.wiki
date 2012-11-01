@@ -1,0 +1,105 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
+
+==Activation/Deactivation of product==
+
+*Scenario1*
+	For an accomodotion product like Taj hotel which is enabled across Cnk-India, CnK-UK, CnK-Austrailia, Ezeego-India and Ezeego-Australia markets.	Activate/Deactivate permission granted to an user called james at base product level. 
+			
+*At Base  Product Level:*
+  *Requirement
+    *An user may deactivate a product across all company-market, this feature must be enabled at base product level, and not at each company-market level.	
+    *Specific Scenario
+    *Refering above scenario1, james will be able to deactivate product across all company-market.	
+
+*Comments*
+	There was no clarity about a workflow involved for activate/deactivate the product? Like wise for creation and updation  of base product.	
+	If we keep activate/deactivate attibute at base product level, the checking of product at company-market level for activation and deactivation will be quite comburesum where every time company-specific product would be needed to join with base product. We may have to join the query/condition at every places including workflows.
+	Suggestion could be when deactivating the base product, trigger an event to mark deactivating all company-market specific product, and do fo vice versa for activating the product and company-specific product may have a base product activate/deactivate attribute.
+	
+	
+	At each company-market level:
+	Requirement	
+		An user may deactivate at each company-market level.
+	Specific Scenario
+		Refering above scenario 1, james may be able to deactivate at the company-market sepcific level e.g. only at Cnk-Australia and Ezeego-India.
+	
+	Comments
+	There was no clarity about a workflow involved for activate/deactivate the product at company-market level? Like wise for creation and updation  of base product.
+	A activate/deactivate attribute at company-market level will be available.
+	
+	
+	
+	
+Workflow	
+Roles
+	Product Owner
+	Product Manager
+	Product Data Entry User (Configurator)
+	Product QC
+	
+	Product Creation/modification must undergo an approval workflow cycle where Data Entry user will be able to perform the CRUD operation, QC (probably review) user will perform the QC and Manger will perform the approval of product.
+	Also in some cases approval and QC may join together, but as a best practices, isolate these actions [QC and Approve] as separate.
+	Rejection may be performed at QC level.
+	SLA may be measured.
+
+Comments
+	As a workflow tools like Activity 5.x, jBPM those are in lightweight, support these features.
+	SLA is calculated for each work flow process and availaible in DB against each process id in these tools.
+	But SLA was a very short discussion, not sure whether they want to have a report.
+	There will always be a separate workflow process for a base product and its respective company specific product. [base product workflow and company specific product would not be joined.]
+	
+
+
+Product Queue	
+	There was a very short discussion on product queue management. Someone will assign to create/update a product to another user and once assigned, a prouct create/update task will be avaialable in a queue calle product queue. Once assigned user gets logged in, he/she will may pick up the product from product queue.
+Comments
+	This is workflow process management task. 
+	
+Usability
+	There were three scenarios discussed from Navigation perspective in creating a product. As elements [attributes]are grouped into sections and probably many sections can be groupd into screens. The flow from one screem to another were discussed.
+	Possible options disscussed are:
+		1. Tabwise screens where user can start from any tab.
+		2. List panel : each screen will be enlisted in left panel and user can click each link to work.
+		3. Wizard based flow: sequencing the screen from one screen to another one
+	Third option i.e. Wizard based flow was mostly liked from CnK.
+	Even for a small change for an attribute at screen 4 e.g., either user has to navigate from screen one till 4 by just clicking the next button, or using a imagelink user may jump to step 4. But in later one, workflow actions must be present on every screen.
+
+
+Comments
+	A web flow framework like Spring web flow can be leveraged, where pagewise context is to be managed. There will be a complexity involved in implementing the wizard base flow which can be made easy by using this web flow engine, but learning curve would be more.
+	The actions like approval/rejection/completion [actions those are related workflow] of product would be seperated out.
+	
+	
+XML Dump
+	The product creation may happened from an XML feed.
+	Not discussed much. Still discussion yet to happen
+	
+
+Multi Lingual
+	Almost every elements of a product will be multi-lingual specific attribute.
+	Multi ligual entry will not be a part of an approval process. 
+	
+Comment
+ 	We need to identifiy the interface for multi-lingual entry.
+	How the key for every attribute will be designed probably it will be like PROD_<<ProductID>>_<<Attribute_Name>>
+	
+
+Creation of company specific product from a base product.
+	When a company-market specific product will be created from a base product, there will some attributes in base product will be modified at company-specific product.
+	
+Comment
+	We have to think of overriding feature from base product.
+	
