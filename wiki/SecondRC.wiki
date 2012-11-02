@@ -1,0 +1,28 @@
+	Group Of Companies	Company Group	Company	SBU	BU	Market
+Group Of Companies	-	*				
+Company Group			                   *			
+Company				                             *		
+SBU					                                 *	
+BU						                                   *
+Market						
+
+
+1	I do not see an approval requirement for these types of entity like GOC, Company, SBU, BU etc. A user with a special permission can create/update operations.								
+2	"A specified workflow engine may be required where 
+   A the draft mode data for an entity would be maintain and final data the entity will be in ODS [operation database].
+   B. Steps regarding editing, approval will be maintained in workflow.
+ In a case if we will be using our own custom workflow inside the application, we need to do some additional instrumentation for draft mode data, maintain the steps etc."								
+3	Not clear about CBR05. Why duplicate records error to be prompted when creating a new record.								
+4	CBR06: How duplicate record will be maintained with the same id? The 								
+5	CBR08: cancellation is not clear. Whether talking about discarding the changes in edit mode? Then it should be discard action. From UI perspective, cancel button is having different meaning than discard.								
+6	No where mentioned about History of changes or any audit trail feature.								
+7	In search grid, we should not show all attributes likewise mentioned for company where address, currency etc not needed in search result.								
+8	Also in search result, instead of showing id of parent record/referenced id , like company id for SBU, proper name detail must be displayed.								
+9	Shall auto suggestion required for name in search feature? For better usablitiy. ID may not be required.								
+10	For view on search, it is mentioned as a 'link' instead of a 'button'.								
+11	Whether any error/validation message area to be specified on the screen or it must be displayed as an alert?								
+12	For every action even for approving an entity data, only one role i.e. 'Organizaion Hierarchy Creator' is mentioned in business use cases. While for approving/reject, it must be  a separate user role.								
+13	Since id would be systemt generated value, it could be alpha-numeric to make it more universal. Probaly we may need it. So datatype for id could text.								
+14	Status is mentioned as a binary data type.  Whether it should be something else?								
+15	Messages [error/validation messages] are very generic. Like 'Record with this name already exists', instead of it should be specific to the case like 'Company Group CnK alredy exist' and it could be specified as placeholder like '{0} {1} already exist'  where {0} = entity type name and {1} = name entered by user.								
+16	There will be separate table for each entity. 								
