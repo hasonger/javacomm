@@ -25,4 +25,35 @@ Market
 13	Since id would be systemt generated value, it could be alpha-numeric to make it more universal. Probaly we may need it. So datatype for id could text.								
 14	Status is mentioned as a binary data type.  Whether it should be something else?								
 15	Messages [error/validation messages] are very generic. Like 'Record with this name already exists', instead of it should be specific to the case like 'Company Group CnK alredy exist' and it could be specified as placeholder like '{0} {1} already exist'  where {0} = entity type name and {1} = name entered by user.								
-16	There will be separate table for each entity. 								
+16	There will be separate table for each entity. 
+
+
+
+
+1. Group of company Id field in group of company add screen should not be pre populated. If it would be pre   
+    populated value then from where to populate Group of Company Id field.  
+
+2. Group Company Id field should not be pre populated in group company add screen.
+
+3. Group Company ID mentioned twice in every wireframe of Group Company. 
+
+4. The Group Company Id should be drop down in add company wireframe.
+
+5.  No such relevance of Test Field for Approver(User Id) as well as drop down for Approver in company   
+      wireframes.
+
+6. SBU Id field should not be pre populated field in Add SBU division screen.
+
+7. Company Id should be drop down in Add SBU division screen.
+
+8. BU Id should not be pre populated filed  in Add BU screen.
+
+9. SBU Id should be drop down in Add BU screen.
+
+10. Company Id should be drop down in Market wireframe. 
+
+11. Validation rule is missing for field attributes.
+
+
+
+								
