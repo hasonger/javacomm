@@ -1,0 +1,29 @@
+UC: CKIL_056103
+1. As per use case in Add screen Template Id would be pre populated and read only. According to me it would 
+    be auto generated. 
+2. There is a facility to Activate/Deactivate Template Master, is approval workflow applicable for the same.
+3. If there is no approval workflow applicable for this use case then default value for status should be Activated   
+    not Deactivated.
+4. Validation rules are missing for field attributes.
+5. What is url location/url name. It should be explained a bit.
+6. Template ID will probably be auto generated and it will be a complex identifier. Do we think business user will able to remember the generated ID.
+7. How template layout will be previewed? missing. Even I know preview feature will be available with defining a white lable.
+8. No of slots: I think there will be a area in every template, where different images will be displayed. I think there will be more elements in every template those could 
+vary from template to template. We should also pickup these.
+
+UC: CKIL_056104
+1. There should always be a save before submit.
+2. Whom to send the approval where need to be configure?
+4. From where we need to create White label attribute.
+5. Other consideration need to be specify.
+6. Mention about the Relative or Absolute path for the "Wait Page" field.
+7. Use case have the common definition for the Multilingual and White label.
+8. City, Country, Contact us, Static content header Toll free field need to be include for Multilingual support.
+9. Need to add the more error message for numeric field.
+10. Select event need to be change with Save event in Manage White label data- Screen-1
+11. In the wireframe Select button need to be change with Save White label data- Screen-2.
+12. Before click to Submit button data should save in the DB.
+13.It is not clear from the use case about the approval workflow. Which workflow need to be trigger? what all the activity need to be associated that workflow?
+14.Need to be add more detail about workflow associated with the mange White label data process.
+15. What all the fields need security consideration like Enabled/Read-only according to Role.
+16. When the publish will be performed? nowhere mentioned...
