@@ -1,0 +1,4 @@
+New items identified in various concalls today (participants-Vishwanath, Arnold, Deval, Amzad, Harish, Ratan):
+1.     A common workflow process and Business rules to be provided by Vishwanath. The UCs will not include the workflow related common requirements. Going forward, testing team would drive the scenarios using common workflow and UC documents together. Technical and QA team to review and close this common workflow document on urgent basis. 
+2.     The screen level validations (data type, mandatory) will be performed when user clicks on NEXT, SAVE and SUBMIT (for approval) buttons
+3.     Duplication check will be performed on SUBMIT click
