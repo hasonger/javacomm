@@ -1,8 +1,7 @@
 ==Draft State==
 *When a new entity/item (product) is to be created*
+ 
 The newly created product will initially be in draft state.
-
-
 
 Other users, who are not authorized to work on it, will not able to see the product record and in search also, the product will not appear in result list [for other users]. 
 
