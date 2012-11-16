@@ -1,0 +1,43 @@
+==Draft State==
+*When a new entity/item (product) is to be created*
+The newly created product will initially be in draft state.
+
+
+
+Other users, who are not authorized to work on it, will not able to see the product record and in search also, the product will not appear in result list [for other users]. 
+
+For assigned user, the product will appear in result list of search and be able to work on it accordingly.
+
+The draft state will be turned off either by release lock feature [refer below] or submitting the changes feature [refer below].
+
+
+*When an existing product is to be modified*
+When user is picking up a product to work on it or assigned to work on a product, the state of the product will be in draft where the product record state/changes will be maintained by workflow [no changes appear in operational database]
+
+Other users will not be able to work on it [refer lock state] and in search result, the product record will appear but with the old status. The entity/item (product) record will appear as a read only mode with old data.
+For assigned user, the product will appear in result list of search.
+
+The draft state will be turned off either by release lock feature [refer below] or submitting the changes feature [refer below].
+
+
+==Submit State==
+*When a new entity/item (product) is to be created*
+When approver approves the newly created product, the product record will be submitted to operational database and workflow state will be marked as complete.
+*When an existing product is to be modified*
+When approver approves the changes of product, the changes of product record will be submitted to operational database and workflow state will be marked as complete.
+
+==Lock Status==
+*When a new entity/item (product) is to be created*
+When new entity/item (product) is created, lock status will not be applied for other users. It will only applicable to the user who is working on it, for ‘lock by me’ feature.  And in search, user who is working it would able to search newly created record [locked by me]. 
+*When an existing product is to be modified*
+For an existing entity/item (product), lock status will be applicable to prevent the modifications by more than one process i.e. at a time; only one process would be involved.
+
+*When an existing product is to be modified*
+The “Lock by Me” feature will be applicable for the user who is currently working on it and in search, user who is working on, will able to see the record changes made during associated workflow cycle. While other user who else not working on it, will able to see the old record data and in read only mode.
+
+==Release Lock==
+*When a new entity/item (product) is to be created*
+When new entity/item (product) is created, the entity/item (product) record can be discarded at any time prior to the approval and in this case associated workflow will be marked as terminated. No changes will be submitted/ applied to operational database.
+
+*When an existing product is to be modified*
+When an existing entity/item (product) is under a process of modification, prior to approval, the changes made could be discarded and lock on the product would be released. No changes will be submitted/ applied to operational database.
