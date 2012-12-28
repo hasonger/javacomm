@@ -1,101 +1,98 @@
-= NFR Comments =
+#summary One-sentence summary of this page.
 
-==Security==
-ExNFR - 
+= Introduction =
 
-_
-The following documents not found in UCM for which it ask to refer.
-  # Secure Application Deployment Guideline [document# CNK-IT-APPSEC-001]
-  # Application Security Applicaiton Qualification Request [Document# CNK-IT-APPSEC-002]
-_
+Add your content here.
 
 
-==Application Security (pg 9)==
-1. OWASP Top Ten Compliance - 
-     In document it is mentioned to visit the third party system [OWASP] by clicking a URL.
-_
-  * It should not point to any URL on third party system for the requirement those are specific to the organization/application. The requirements must be specified in the document.
-  * The third party system can be included as a reference.
-_
+= Details =
 
-2. Application Security Qualification Request
-     Application vendor must provide dully security architecture template.....
-_
-  * It needs more clarification, whether NTL will have to do it?
-  * Suggestion: refer third party tools like firebug etc those are having expertise in application security area.
-_
-
-
-3. *Application security feature related with Operating systems must be referred to CnK infra team, not with application.*
-
-==Recoverability/ Disaster Recovery/Restorability/Resilience==
-1. Application Self-Resiliency
-    Restoration should be on multiple databases.
-    Application MUST support mysql 5, Microsoft Sql Server 8 and Oracle 11g and above.
-_
-  * As of now we are only targeting Oracle Database. Need to check it again.
-_
-
-2. Multiple Commits Feature
-_
-  * It is two phase commit feature and DB must support distributed transaction management.
-_
-
-3. Out of Sync Protection
-_
-  * It is a clustering feature. 
-  * Also assumption is, multiple databases will be from same vendor and probably same version.
-_
-
-4. Load Balancing
-_
-  * Load balancer would involve in balancing the web server and applications. It would be part of IT infra team. 
-  * We need to look for codes to be supported in clustering like session attributes.
-_
-
-==Usability and Application Portability==
-
-1. Install ability
-      Installation on multiple platforms:
-  * Travel ERP is a java/J2EE based application. Portability is an inherent feature of java.
-
-2. Browser Support and HTML support
-     _Here there is contradictory statements. _
-  "Application should support IE7+, Opera11+, Mozilla Firefox 11+, Google Chrome (RC), Safari 4+"
-
-  AND
-
-  "HTML5 and above should be used."
-
-_
-We know some enlisted browser does not support HTML5. The application compliant with HTML5 will not run in many of browsers mentioned in the list like IE7.
-_
-
-3. Minimal Java Script Usage
-
-_
-Scope is not clear. Everything on HTML page is a content. It should be defined like which type of content would not be handled using JS.
-_
-
-
-==Performance and Administration==
-1. Captive Performance Load Management System
-   “The application will have ability to track & act upon defined performance parameters........”
-
-_
-It is an overhead to the Travel ERP application. An adequete design must be in place.
-_
-
-2. Self Backup
-“The application will have the ability to fire /executes its own backup. and .....”
-
-_
-It is an overhead to the Travel ERP application. An adequete design must be in place.
-_
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
 
 
 
-Also the document talk more about security and administration where IT infra involvement is more important than NFR those are relevant to the application.
 
 
 
+
+
+
+
+
+
+Weblogic Administrators 
+
+
+The selected candidate will perform the application installation, configuration, and troubleshooting expertise for supported web applications in the development, QA, integration, staging (pre-production) and production environments. This includes, but is not limited to, Oracle Weblogic Server and OSB on a Linux platform. 
+The candidate will work as part of a team with a decided focus on supporting the application software within the Applications services area. These application support teams manage multiple environments built around Oracle Weblogic Server (11g), Oracle Service Bus and Oracle Coherence. The individual should be well versed in all areas of application support. This is a faced paced organization with a monthly release cycle. The successful incumbent will thrive on change but focus on the operational stability of the supported platforms.
+
+Roles & Responsibilities:
+Setting up applications in coherence and clustering (Desired: replications across data centres ) environments
+Install applications and middleware as required.
+Lead deployment activities and coordinate both internal and external resources.
+Proactively evaluate application health and performance, follow up on requests and resolve anomalies.
+Assist with the evaluation, customization and implementation of off-the-shelf tools as applicable.
+Participate in a 24x7 on-call rotation in support of the software environments.
+Perform root cause analysis for outages and issues and recommend/implement improvements to systems and processes.
+Help to define operational standards across the organization.
+Provide leadership for and mentoring of junior team members.
+Recommend and manage the implementation of automated monitoring solutions and problem detection/resolution methodologies.
+Provide regular status updates to management on assigned tasks and projects.
+Excellent oral and written communication skills.
+Minimum Qualifications:
+6 yrs Java/J2EE experience under Linux/Unix including testing and troubleshooting.
+6 years combined experience in the support and administration of Oracle Weblogic server.
+4 years combined experience in the support and administration of Service Oriented Architectures, including
+Oracle Service Bus (preferred) and Oracle Coherence.
+4 years experience supporting high volume transaction processing systems.
+6 years experience in Unix, Linux preferred. Some system administration background is a plus.
+2 years experience with scripting languages WLST and Jython scripts for repeated Weblogic administration activities
+Experience and comfort with common network elements such as routers, firewalls, and load balancers.
+Security knowledge in Firewall, access, LDAP is a plus
+Solid understanding and be able to demonstrate experience with HTTP, TCP/IP, DNS, SSH, Clustering, Load balancing, Open SSO and Oracle RAC
+Bachelors degree in computer science, engineering, or related discipline.
+
+
+
+Oracle DBA
+The service consists of daily maintenance of the databases, Health Checks, Proactive Maintenance, Identifying Issues, Troubleshooting Techniques, Root Cause Analysis, Performance Monitoring, and Performance Tuning.
+ Roles & Responsibilities:
+The purpose of this role is to provide technical support in order to ensure a high degree of Customer Satisfaction through SLA & Process Compliance. The emphasis would be on skills like
+-      Proactive Metrics and Improvement
+-      Monitoring proactive server alerts and sensitize them and resolve it in best possible way
+-      Work on Severity 1 / Severity 2 / Severity 3 incidents and fix them ASAP
+-      Excellent Technical Solution Engineering
+-      Customer sensitivity and Rapid Response
+-      Proactive and Clear Communication
+-      Quality & Process Compliance
+
+Desired Profile
+ -      Understand and willing to provide DB support in shifts on rotation basis.
+-      Hands on experience in Database Administration (preferably OCP).
+-      Installing oracle server and client software, creating database, upgrading database.
+-      Good Experience in Oracle 9i, 10g, 11g R1 and R2, Tablespace, Schemas, Space management.
+-      Experience in Patching, Upgrade and Migration of oracle database across different versions and platforms.
+-      Experience in working with DB Tools like Oracle Enterprise Manager's (OEM's), SQL analyzer, Statspack, AWR, TOAD, and Performance Analysis Tool.
+-      Hands on experience in database backups and Recovery strategies using RMAN, Export/Import, Cold, Hot backups & DR solutions.
+-       Hands on experience in Datapump (10g/11g)
+-      Experience in implementation of physical standby database using Oracle Data Guard, Flashbackup etc.,
+-      Hands on experience in DB Cloning/Refresh using HOT/Cold backups.
+-      Experience in Oracle RAC - Installation/Upgradation/Troubleshooting/Bouncing RAC
+-      DB Tuning & Performance Monitoring.
+-      Good knowledge about Unix/Linux shell scripting
+-      Good communication skills (Written & Verbal) & Documentation knowledge is must
+
+
+Build and Release / Configuration Manager Professionals
+ 
+2  4 years of experience in Build & Release / Configuration Manager
+Should have experience on Ant (or) Maven
+Should have experience on Jenkins (or) Hudson
+Should have experience on SVN
+Having experience on Weblogic 11g, Unix / Linux & Shell is a plus
+Candidate's are required to adhere and enforce the security policies of the organization 
+ 
+Experience: 2-4 years experience in Build and Release, Ant (or) Maven, Jenkins (or) Hudson, SVN, Oracle Weblogic 11g, Unix, Shell
