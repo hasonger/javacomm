@@ -1,0 +1,12 @@
+The major features of the solution will include:
+•	Capability to setup products for transportation, accommodation, activities, holiday packages, and others like insurance, forex, etc
+•	Solution meeting the business and operational requirements for C&K internal (B2E), B2C and B2B users including Agencies and Corporate
+•	Support B2B2n model allowing C&K to roll out the application to other TMCs and travel companies 
+•	Capability of rolling out reverse XML and white-labeled sites in future
+•	Capability to manage inventory and pricing for various products
+•	State of the art IBE as a key distribution channel in order to increase online domestic and International sales integrating with over more than 75 supplier systems
+•	Flexibility to meet the new organization structure of C&K and integrating with various internal systems for financials, forex, CMS, active directory in addition to external supplier systems 
+•	A single solution catering to complete C&K group of companies
+•	An easy, convenient, configurable & user-friendly interface for operations and administration teams 
+•	Cost effective solution with rich functionality, state-of-the-art, flexible technologies and infrastructure which are scalable and in-line with the industry best practices including SOA
+•	Workflow and Approval Management
