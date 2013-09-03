@@ -1,0 +1,227 @@
+package com.cnk.cronmaker.bean;
+
+public class CronFieldValidator {
+	
+	public enum CRON_FIELD_TYPE {SECONDS, 
+								MINUTES, 
+								HOURS, 
+								DAY_OF_MONTH, 
+								MONTH, 
+								DAY_OF_WEEK, 
+								YEAR};
+	
+
+//	private CRON_FIELD_TYPE fieldType;
+//	private String input;
+	
+	private static String SPCL_CHAR = "[LW#?]";
+
+	private static String NUMERIC_STR = "[0-9]*"; 
+	private static String TEXT_STR = "[a-zA-Z]*";
+
+	private static String MONTHS_STR = "JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC";
+	private static String WEEK_STR = "SUN|MON|TUE|WED|THU|FRI|SAT";
+
+	private static String LITERAL_VALUES="[0-9,]*[0-9]$|[A-Z,]*[A-Z]$";
+	private static String RANGE_VALUE="[0-9]*-[0-9]*|[A-Z]*-[A-Z]*";
+	private static String INCREMENTAL_VALUE="[0-9]*/[0-9]*";
+
+	
+	public static boolean validate( String input, CRON_FIELD_TYPE fieldType){
+		if (input.equals("*")){
+			return true;
+		}
+		if (fieldType == CRON_FIELD_TYPE.SECONDS ||
+				fieldType == CRON_FIELD_TYPE.MINUTES ||
+				fieldType == CRON_FIELD_TYPE.HOURS ||
+				fieldType == CRON_FIELD_TYPE.MONTH ||
+				fieldType == CRON_FIELD_TYPE.YEAR
+				){
+			if (input.matches( SPCL_CHAR )){ // need to replace with correct regex..
+				return false; //not a valid input
+			}
+			
+		}
+		
+		if (fieldType == CRON_FIELD_TYPE.DAY_OF_MONTH && input.matches("L|W|\\?")){
+			 return true;
+		}
+		if (fieldType == CRON_FIELD_TYPE.DAY_OF_WEEK){
+			if ( input.matches("[0-9]L") ){
+				return isValidDayOfWeekValue(input.substring(0, input.length()-1));
+			}
+			if ( input.matches("[0-9]#[0-9]") ){
+				String[] s = input.split("#");
+				if (isValidDayOfWeekValue( s[0] )){
+					int i=Integer.parseInt(s[1]);
+					if ( !(i >=1 && i<=4) ){ 
+						return false;
+					}
+					return true;
+				}
+			}
+			if ( input.matches("\\?") ){
+				return true;
+			}
+		}
+
+		
+		
+		
+		if (input.matches(LITERAL_VALUES) ){ //comma seperate values
+			String[] inputs = input.split(",");
+			return validate(inputs,fieldType);
+		}
+		if (input.matches(RANGE_VALUE)){ //Range values
+			String[] inputs = input.split("-");
+			return validate(inputs,fieldType);
+		}
+		if (input.matches(INCREMENTAL_VALUE)){ //need more exploration
+			return true;
+		}
+
+		
+		return false;
+	}
+	
+	
+	private static boolean validate(String[] inputs, CRON_FIELD_TYPE fieldType){
+		boolean retVal=true;
+		switch( fieldType){
+			case SECONDS :
+			case MINUTES :
+				for(String s:inputs){
+					retVal = isValidSecondOrMinuteValue(s);
+					if (!retVal){
+						return retVal; //return if there is a wrong value oocured.
+					}
+				}
+				break;
+				
+			case HOURS:
+				for(String s:inputs){
+					retVal = isValidHourValue(s);
+					if (!retVal){
+						return retVal; //return if there is a wrong value oocured.
+					}
+				}
+				break;
+
+			case MONTH:
+				for(String s:inputs){
+					retVal = isValidMonthValue(s);
+					if (!retVal){
+						return retVal; //return if there is a wrong value oocured.
+					}
+				}
+				break;
+
+			case YEAR:
+				for(String s:inputs){
+					retVal = isValidYearValue(s);
+					if (!retVal){
+						return retVal; //return if there is a wrong value oocured.
+					}
+				}
+				break;
+
+			case DAY_OF_MONTH:
+				for(String s:inputs){
+					retVal = isValidDayOfMonthValue(s);
+					if (!retVal){
+						return retVal; //return if there is a wrong value oocured.
+					}
+				}
+				break;
+		
+			case DAY_OF_WEEK:
+				for(String s:inputs){
+					retVal = isValidDayOfWeekValue(s);
+					if (!retVal){
+						return retVal; //return if there is a wrong value oocured.
+					}
+				}
+				break;
+		}
+
+
+		return retVal;
+	}
+	
+	private static boolean isValidSecondOrMinuteValue(String input){
+		int i=numberValue( input );
+		if ( !(i >= 0 && i <= 59) ){
+			return false;
+		}
+		return true;
+	}
+
+	private static boolean isValidHourValue(String input){
+		int i=numberValue( input );
+		if (!(i >= 0 && i <= 23)){
+			return false;
+		}
+		return true;
+	}
+
+	private static boolean isValidDayOfMonthValue(String input){
+		int i=numberValue( input );
+		if ( !(i >= 1 && i <= 31) ){
+			return false;
+		}
+		return true;
+	}
+
+	private static boolean isValidYearValue(String input){
+		if (input.isEmpty()){
+			return true;
+		}
+		
+		int i=numberValue( input );
+		if ( !(i >= 1970 && i <= 2199) ){
+			return false;
+		}
+		return true;
+	}
+	
+
+	private static boolean isValidMonthValue(String input){
+		if (input.matches( TEXT_STR )){
+			input = input.toUpperCase();
+			return input.matches(MONTHS_STR);
+			
+		}
+		int i=numberValue( input );
+		if (  !(i >= 1 && i <= 12) ){
+			return false;
+		}
+		return true;
+	}
+	
+	private static boolean isValidDayOfWeekValue(String input){
+		if (input.matches( TEXT_STR )){
+			input = input.toUpperCase();
+			return input.matches( WEEK_STR);
+			
+		}
+		int i=numberValue( input );
+		if ( !(i >= 1 && i <= 7)){
+			return false;
+		}
+		return true;
+	}	
+	
+	
+	private static int numberValue(String input){
+		if (input.matches( NUMERIC_STR )){
+			return Integer.parseInt(input);
+		}
+		return -1;
+		
+	}
+
+//	private static boolean isNumber(String input){
+//		return input.matches( NUMERIC_STR );
+//	}
+
+}
