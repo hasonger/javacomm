@@ -1,0 +1,92 @@
+package com.cnk.cronmaker.bean;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CronFieldValidatorTest {
+
+	@Test
+	public void testCrons() {
+		//Fire at 2:10pm and at 2:44pm every Wednesday in the month of March.
+		
+		assertCron("0 10,44 14 ? 3 WED",
+				"Fire at 2:10pm and at 2:44pm every Wednesday in the month of March.");
+
+		assertCron("0 0 12 * * ?",
+				"Fire at 12pm (noon) every day.");
+
+		assertCron("0 15 10 * * ?",
+				"Fire at 10:15am every dayFire at 12pm (noon) every day.");
+
+		assertCron("0 15 10 * * ? *",
+				"Fire at 10:15am every day.");
+
+		assertCron("0 15 10 * * ? 2005",
+				"Fire at 10:15am every day during the year 2005.");
+
+		assertCron("0 * 14 * * ?",
+				"Fire every minute starting at 2pm and ending at 2:59pm, every day.");
+		assertCron("0 0/5 14 * * ?",
+					"Fire every 5 minutes starting at 2pm and ending at 2:55pm, every day");
+		assertCron("0 0/5 14,18 * * ?",
+					"Fire every 5 minutes starting at 2pm and ending at 2:55pm, AND fire every 5 minutes starting at 6pm and ending at 6:55pm, every da");
+
+		assertCron("0 0-5 14 * * ?",
+				"Fire every minute starting at 2pm and ending at 2:05pm, every day.");
+
+		assertCron("0 10,44 14 ? 3 WED",
+				"Fire at 2:10pm and at 2:44pm every Wednesday in the month of March.");
+
+
+		assertCron("0 15 10 ? * MON-FRI",
+				"Fire at 10:15am every Monday, Tuesday, Wednesday, Thursday and Friday.");
+
+		assertCron("0 15 10 15 * ?",
+				"Fire at 10:15am on the 15th day of every month.");
+	
+		assertCron("0 15 10 L * ?",
+				"Fire at 10:15am on the last day of every month.");
+		
+		assertCron("0 15 10 ? * 6L",
+				"Fire at 10:15am on the last Friday of every month.");
+		
+		assertCron("0 15 10 ? * 6L",
+				"Fire at 10:15am on the last Friday of every month.");
+
+		assertCron("0 15 10 ? * 6L 2002-2005",
+				"Fire at 10:15am on every last friday of every month during the years 2002, 2003, 2004 and 2005.");
+
+
+		assertCron("0 15 10 ? * 6#3",
+				"Fire at 10:15am on the third Friday of every month.");
+
+
+		assertCron("0 0 12 1/5 * ?",
+				"Fire at 12pm (noon) every 5 days every month, starting on the first day of the month.");
+
+		assertCron("0 11 11 11 11 ?",
+				"Fire every November 11th at 11:11am.");
+		
+	}
+
+	private void assertCron(String expression,String cronDesc){
+		boolean[] checks = checks(expression);
+		for(int i=0;i<checks.length;i++){
+			assertTrue(cronDesc+" Problem with " + CronFieldValidator.CRON_FIELD_TYPE.values()[i],checks[i]);
+		}
+		
+	}
+	
+	private static boolean[] checks(String expression){
+		String[] fieldValues = expression.split(" ");
+		boolean[] checks = new boolean[fieldValues.length];
+		for(int i=0;i<fieldValues.length;i++){
+			checks[i] = CronFieldValidator.validate(fieldValues[i], 
+					CronFieldValidator.CRON_FIELD_TYPE.values()[i]);
+		}
+		return checks;
+		
+	}
+
+}
