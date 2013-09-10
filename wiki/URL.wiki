@@ -1,0 +1,16 @@
+SAD Document	Creator	Completion Date	Reviewer
+Build Architecture	Vishwanath	12-Sep-13	Vishal
+Environments 	Vishwanath	12-Sep-13	Vishal,Sandeep
+Caching and Session Management	Vishwanath	16-Sep-13	Vishal
+Security Architecture	Vishwanath	19-Sep-13	Vishal
+Workflow	Vishal	12-Sep-13	Vishwanath
+Architectural Principals	Vishal	12-Sep-13	Vishwanath
+System Context Diagram	Vishwanath	10-Sep-13	Done
+Audit and Logging	Vishal	16-Sep-13	Vishwanath
+Overview	Vishal	16-Sep-13	Vishwanath
+Design Best Practices	Kedar	18-Sep-13	Vishwanath
+Travel ERP - Technology Stack	Kedar	18-Sep-13	Vishal
+Style & Usability Guide	Sandeep	19-Sep-13	Kedar
+Coding Standards	Vishwanath	13-Sep-13	Kedar
+Database Standards and Guidelines	Abdul	13-Sep-13	Kedar
+Design Approach	Kedar	10-Sep-13	Done
