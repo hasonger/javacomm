@@ -1,0 +1,36 @@
+#summary One-sentence summary of this page.
+Summary of Assignments and Accomplishments:
+1.	Delivered use cases like Alert and Notifications – Definition and Display, Audit Log, Error management [from solutions till Signed off]
+2.	Actively involved in review of use cases – specially Work pack1 – Given technical feasibility
+3.	Given technical guidance to dev team to create POC demonstrating Webflow, Worflow (Activtiti 5.10), jQuery, jGgrid, Kendo UI for Air, Accommodation use cases. 
+4.	Created Configuration Management document – delivered 
+5.	Created Build Architecture document 
+6.	Technology Stack – created various assessments e.g. Caching
+7.	Involved in various NFRs discussion : since initial owner of NFR, I was answerable for various topics
+8.	Created Environment Documents and installation strategies for Oracle Database, Weblogic Server.
+9.	Largely involved in major Technology Decisions with Oracle i.e. for SOA suite, ADFs
+10.	System Context Diagram – created and delivered.
+11.	Created Solution strategy (architecture level) – Caching, Security [initial]
+12.	Owning common Platform – strategy and implementation of various common platforms like Alerts & Notification, Audit Log, Exception Handling, Persistence, multi lingual, user management etc.
+13.	Review of impacted areas and guidance – Database, development of common functionalities, helping development team in terms of review and any technical clarification
+
+2.	Successes and Improvement Areas:
+a.	Delivery of User Cases
+b.	Delivery of Configuration Management Document (CMP) 
+c.	Development setup with SVN and Maven
+d.	System Context Document 
+e.	Implementation of Reference Masters, Persistence Laye
+
+3.	Learning Discussed
+Review, Writing Use Cases, 
+System Context Diagram – understood various factors about System Context diagram
+Oracle Coherence – Given me more insight about various caching strategies
+
+4.	Support & Enablement Required for Future Improvement:
+a.	SOA Suite Training at least.
+b.	
+5.	Plan for Next Quarter:
+Delivery of Common Platform with its implementation
+SOA Suite based application strategy – it may need to strategize build, package
+6.	Specific Remarks:
+a.	Persistence Platform which would be going to include various other cross cutting functionalities like History, Audit log , multi lingual, would save substantial effort in development and enable consistency in development
