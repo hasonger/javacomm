@@ -1,0 +1,39 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+1. Summary of Assignments and Accomplishments:
+	1. Developed UCs related to system functionality such as User Management, Login Management, Home Page
+	2. Participated in NFR & Technical  discussions and helped freeze the requirements
+	3. Helped freeze the templates for SAD & SDD
+	4. Developed Architecture document in the areas Audit Management, Workflow, Principles, Messaging Strategy
+	5. Helped the UI team to conceive and freeze the new UI wireframes for B2E funcitonality
+	6. Developed Architecture diagram related to Suplier Integration  (Product Specific, Product Agnostic)
+	7. Helped develop Low Level Design for Lowfare Search Galileo Connector and Air SE 
+	8. Developed low level design for User Management & Login Management
+	9. Evaluated technical components related to technical stack
+	10. Review architecture documents developed by peers"
+
+
+2. Successes and Improvement Areas:
+	1. Delivered signed of system related Ucs
+	2. Architecture related to SI
+	3. Delivered design document for User & Login Management (along with the pseudo code)
+	4. Negotiated with client and got the approval of new UI"
+
+3. Learnings Discussed
+
+4. Support & Enablement Required for Future Improvement: 
+	1. Training on Oracle SOA Suite
+	2. Appropriate Resources for Delivery of Design
+	3. Finalization of more concrete plan"
+
+5. Plan for Next Quarter:
+	1. Develop Design for SI (Air & Hotel Product, all processes)
+
+6. Specific Remarks:
