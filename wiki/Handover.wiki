@@ -1,0 +1,24 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+Serial	Deliverable	Artifacts	Feedback By	% Complete	Handover To
+1	Technology Stack	Project Management\Design_Dev\Design\Travel ERP Technology Stack.xlsx	Vishal, Vishwanath, C&K	100%	Suresh
+2	Technology View	Project Management\Design_Dev\Design\Travel ERP - Technology Selection.docx	Vishal, C&K	100%	Suresh
+3	Technology Comparison	Project Management\Design_Dev\Design\Travel ERP Tools Comparison.xlsx	Vishal, Vishwanath, C&K	100%	Suresh
+4	Design Approach	Project Management\Design_Dev\Design\Travel ERP - Design Approach.pptx	Suresh, C&K	100%	Suresh
+5	Design Best Practices	Project Management\Design_Dev\Design\Travel ERP - Design Best Practices.docx	Vishwanath, C&K	100%	Vishwanath
+6	NFR Sheet	Project Management\Design_Dev\Design\NFR\Travel ERP - NFR.xlsx	Vishwanath, C&K	100%	Vishwanath
+7	NFR View	Project Management\Design_Dev\Design\NFR\Travel ERP - NFR View.docx	Vishal, C&K	100%	Vishal
+8	NFR Security View	Project Management\Design_Dev\Design\NFR\Travel ERP - Security View.docx	Vishal, C&K	100%	Vishwanath
+9	NFR Security Strategy	Project Management\Design_Dev\Design\NFR\Travel ERP - NFR Security.docx	Vishal, C&K	100%	Vishwanath
+10	NFR Usability Strategy	Project Management\Design_Dev\Design\NFR\Travel ERP - NFR Usability.docx	Vishal, C&K	100%	Vishwanath
+11	NFR Application Strategy	Project Management\Design_Dev\Design\NFR\Travel ERP - NFR Application.docx	Vishal, C&K	100%	Vishal
+12	NFR Availability & Scalability Strategy	Project Management\Design_Dev\Design\NFR\Travel ERP - NFR Availability.docx	Vishal, C&K	100%	Vishal
+13	NFR Performance Strategy	Project Management\Design_Dev\Design\NFR\Travel ERP - NFR Performance.docx	Vishal, C&K	100%	Vishal
+14	Sign-off emails	Project Management\Design_Dev\Design\Emails	Suresh	100%	Suresh
