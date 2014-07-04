@@ -14,3 +14,67 @@ Style & Usability Guide	Sandeep	19-Sep-13	Kedar
 Coding Standards	Vishwanath	13-Sep-13	Kedar
 Database Standards and Guidelines	Abdul	13-Sep-13	Kedar
 Design Approach	Kedar	10-Sep-13	Done
+
+
+
+
+Maven is the build manager for Travel ERP system. Below diagram illustrates dependency mechanism among components.
+
+1.	Common – This directory will contain common components artefacts (java files, properties file, jsp or any other j2ee artefacts), those could be used in across functional applications, components, like product setup (Air, Accommodation), IBE. 
+2. Model
+2.	Setup - This directory will contain set up component artefacts. Set up components examples are Air, Accommodation, Suppliers, and Client.
+3.	IBE - This directory will contain IBE component artefacts. 
+4.	Integration – All the supplier integration artefacts will be part of this folder.
+
+
+
+
+
+cnk-travelerp - 
+It will contain environment specific information like SCM, Distribution Management, Repository Management, Issue Management, Mailing List, Profiles, Also continuous integration management, plugin management. 
+It also contains children modules of this project.
+
+Common
+This is a common module project contain sub projects to be reused across all main module like integration, ibe or product setup. 
+
+Parent
+It will contain dependency management applicable for all deliverables for this project.
+
+
+
+
+
+Top Level POM
+As illustrated on above diagram, top level pom (maven project) in main (cnk-travelerpibe)/root will contain the following lines. 
+<groupId>com.cnk.travelerpibe</groupId>
+  <artifactId>travelerpibe</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Travel ERP IBE</name>
+  <description>Travel ERP build POM</description>
+  <url>http://cnk.com</url>
+  <inceptionYear>2012</inceptionYear>
+Top level POM will contain controlling management configuration e.g. environment specific information like SCM, Distribution Management, Repository Management, Issue Management, Mailing List, Profile and plug-in management. 
+
+Parent POM
+It will contain dependency management applicable for all deliverables for Travel ERP system. It will basically point to all the dependencies with their respective version numbers. Every project will not contain the dependencies with versions. If any sub-system/component of Travel ERP needs to be use a specific dependency/overriding the dependencies, the respective component/sub-system may override.
+Root project will be the parent for this POM.
+
+
+
+Functional POMs
+Every functional deliverables are mapped to their own directory. The common, setup, ibe and integration are folders for functional deliverables. There will be POM specified at every functional directory level. Every POM of these folders will point to Parent POM as parent. Also every functional deliverables will further decompose into their group, and their all children will be specified under the same group.
+For example, common POM’s will contain the following lines.
+  <parent>
+      <groupId>com.cnk.travelerpibe</groupId>
+	<artifactId>travelerpibe-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+    <!-- relativePath causes out-of-date problems on hudson slaves -->
+    <relativePath>../parent/pom.xml</relativePath>
+  </parent>
+
+   <!— - Common group - ->
+  <groupId>com.cnk.travelerpibe.common</groupId> 
+  <artifactId>common</artifactId>
+  <packaging>pom</packaging>
+
