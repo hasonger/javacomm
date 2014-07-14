@@ -78,3 +78,13 @@ For example, common POM’s will contain the following lines.
   <artifactId>common</artifactId>
   <packaging>pom</packaging>
 
+
+
+
+
+
+
+
+
+Unexpected error: com.bea.wli.config.session.SessionConflictException
+Unexpected error:  com.bea.wli.config.session.SessionConflictException
