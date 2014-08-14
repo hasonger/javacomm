@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cnk.travelerp</groupId>
+	<artifactId>travelerp-ota</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.2.5-b10</version>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<!--
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-source-plugin</artifactId>
+			  <executions>
+				<execution>
+				  <id>attach-sources</id>
+				  <goals>
+					<goal>jar</goal>
+				  </goals>
+				</execution>
+			  </executions>
+			</plugin>
+			-->
+		
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>xjc</id>
+						<goals>
+							<goal>xjc</goal>
+							
+						</goals>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<outputDirectory>src/main/java</outputDirectory>
+					<schemaDirectory>src/main/xsd/ota2013b</schemaDirectory>
+					<bindingDirectory>src/main/xjb</bindingDirectory>
+					<includeSchemasOutputPath>src/main/resources/xsd/ota2013b</includeSchemasOutputPath>
+				</configuration>
+			</plugin>
+		</plugins>
+		
+		<resources>
+			<resource>
+			  <directory>src/main/resources</directory>
+			</resource>
+			<resource>
+			  <directory>src/main/java</directory>
+			  <includes>
+				<include>**/*.java</include>
+			  </includes>
+			</resource>
+		</resources>
+
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Internal Releases</name>
+			<url>http://10.21.12.110:8080/nexus/content/repositories/releases/</url>
+			
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Releases</name>
+			<url>http://10.21.12.110:8080/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
