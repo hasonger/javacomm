@@ -1,0 +1,95 @@
+<!-- GetApplicableTransactionFeesExtendedXML_RQ -->
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:rad="http://radixx.com/WSRadixx/RadixxBooking">
+   <soap:Header/>
+   <soap:Body>
+      <rad:GetApplicableTransactionFeesExtendedXML>
+         <!--Optional:-->
+         <rad:SecurityGUID>babf52ca-fd14-4a83-90a5-996ee0837ef5</rad:SecurityGUID>
+         <!--Optional:-->
+         <rad:ReservationCurrency>INR</rad:ReservationCurrency>
+      </rad:GetApplicableTransactionFeesExtendedXML>
+   </soap:Body>
+</soap:Envelope>
+
+<!-- GetApplicableTransactionFeesExtendedXML_RS -->
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <soap:Fault>
+         <soap:Code>
+            <soap:Value xmlns:q0="https://services.radixx.com/WSRadixx">q0:RadixxError</soap:Value>
+         </soap:Code>
+         <soap:Reason>
+            <soap:Text xml:lang="en">System.Web.Services.Protocols.SoapException: ERR3030: Airline does not assess transaction fees. No transaction fees will be added. in GetTransactionFeesExtended. ---> System.Web.Services.Protocols.SoapException: ERR3030: Airline does not assess transaction fees. No transaction fees will be added. in GetTransactionFeesExtended.
+   at WSRadixx.Hybrid.BusinessObjects.Services.GetTransactionFeesExtended(String SecurityGUID, String strReservationCurrency)
+   at WSRadixx.Hybrid.RadixxBooking.GetApplicableTransactionFeesExtendedXML(String SecurityGUID, String ReservationCurrency)
+   --- End of inner exception stack trace ---
+   at WSRadixx.Hybrid.RadixxBooking.GetApplicableTransactionFeesExtendedXML(String SecurityGUID, String ReservationCurrency)</soap:Text>
+         </soap:Reason>
+         <soap:Node>GetTransactionFeesExtended</soap:Node>
+         <RadixxError ErrorCode="ERR3030" xmlns="http://services.radixx.com/WSRadixx/WSRadixx"/>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+<!-- GetSecurityGUID_RQ -->
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:rad="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity">
+   <soap:Header/>
+   <soap:Body>
+      <rad:GetSecurityGUID>
+         <!--Optional:-->
+         <rad:LogonID>GoAir_Test</rad:LogonID>
+         <!--Optional:-->
+         <rad:Password>confirm</rad:Password>
+      </rad:GetSecurityGUID>
+   </soap:Body>
+</soap:Envelope>
+
+<!-- GetSecurityGUID_RS -->
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <GetSecurityGUIDResponse xmlns="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity">
+         <GetSecurityGUIDResult>babf52ca-fd14-4a83-90a5-996ee0837ef5</GetSecurityGUIDResult>
+      </GetSecurityGUIDResponse>
+   </soap:Body>
+</soap:Envelope>
+
+<!-- LoginTravelAgencyUser_RQ -->
+	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:rad="http://radixx.com/WSRadixx/RadixxTravelAgents">
+	   <soap:Header/>
+	   <soap:Body>
+		  <rad:LoginTravelAgencyUser>
+			 <!--Optional:-->
+			 <rad:SecurityGUID>babf52ca-fd14-4a83-90a5-996ee0837ef5</rad:SecurityGUID>
+			 <!--Optional:-->
+			 <rad:TANumber>RXAPIEZG</rad:TANumber>
+			 <!--Optional:-->
+			 <rad:Username>apiezg</rad:Username>
+			 <!--Optional:-->
+			 <rad:Password>Apiezg@12</rad:Password>
+		  </rad:LoginTravelAgencyUser>
+	   </soap:Body>
+	</soap:Envelope>
+
+<!-- LoginTravelAgencyUser_RS -->
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <soap:Fault>
+         <soap:Code>
+            <soap:Value xmlns:q0="https://services.radixx.com/WSRadixx">q0:RadixxError</soap:Value>
+         </soap:Code>
+         <soap:Reason>
+            <soap:Text xml:lang="en">System.Web.Services.Protocols.SoapException: ERR9999: Unexpected error in LoginTravelAgencyUser. Error Details: ERR0100: Security GUID check failed, please request a new GUID in LoginTravelAgencyUser. Error Details: TA login attempt failed ---> System.Web.Services.Protocols.SoapException: ERR0100: Security GUID check failed, please request a new GUID in LoginTravelAgencyUser. Error Details: TA login attempt failed ---> System.Exception: TA login attempt failed
+   --- End of inner exception stack trace ---
+   at WSRadixx.Hybrid.RadixxTravelAgents.LoginTravelAgencyUser(String SecurityGUID, String TANumber, String Username, String Password)
+   --- End of inner exception stack trace ---
+   at WSRadixx.Hybrid.RadixxTravelAgents.LoginTravelAgencyUser(String SecurityGUID, String TANumber, String Username, String Password)</soap:Text>
+         </soap:Reason>
+         <soap:Node>LoginTravelAgencyUser</soap:Node>
+         <RadixxError ErrorCode="ERR9999" xmlns="http://services.radixx.com/WSRadixx/WSRadixx"/>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+
+
+
