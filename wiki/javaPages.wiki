@@ -1,0 +1,288 @@
+package com.cnk.travelerp.common.references.bean;
+
+import java.util.List;
+
+public class ReferenceEntity extends RestResponse{
+	
+	
+
+	String name;
+	
+    private List<ReferenceMaster> rows;
+
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the rows
+	 */
+	public List<ReferenceMaster> getRows() {
+		return rows;
+	}
+
+	/**
+	 * @param rows the rows to set
+	 */
+	public void setRows(List<ReferenceMaster> rows) {
+		this.rows = rows;
+	}
+
+
+}
+
+
+package com.cnk.travelerp.common.references.bean;
+
+public class ReferenceMaster {
+	    private String code;
+	    private String value;
+	    private String parentCode;
+	    
+	    public ReferenceMaster(){
+	    	
+	    }
+	    
+	    
+		public ReferenceMaster(String code, String value, String parentCode) {
+			super();
+			this.code = code;
+			this.value = value;
+			this.parentCode = parentCode;
+		}
+
+
+		/**
+		 * @return the code
+		 */
+		public String getCode() {
+			return code;
+		}
+		/**
+		 * @param code the code to set
+		 */
+		public void setCode(String code) {
+			this.code = code;
+		}
+		/**
+		 * @return the value
+		 */
+		public String getValue() {
+			return value;
+		}
+		/**
+		 * @param value the value to set
+		 */
+		public void setValue(String value) {
+			this.value = value;
+		}
+		/**
+		 * @return the parentCode
+		 */
+		public String getParentCode() {
+			return parentCode;
+		}
+		/**
+		 * @param parentCode the parentCode to set
+		 */
+		public void setParentCode(String parentCode) {
+			this.parentCode = parentCode;
+		}
+
+	    
+}
+
+package com.cnk.travelerp.common.references.bean;
+
+import java.util.List;
+
+public class RefRestResponse extends RestResponse{
+	
+	
+	List<ReferenceEntity> referenceEntities;
+
+	/**
+	 * @return the referenceEntities
+	 */
+	public List<ReferenceEntity> getReferenceEntities() {
+		return referenceEntities;
+	}
+
+	/**
+	 * @param referenceEntities the referenceEntities to set
+	 */
+	public void setReferenceEntities(List<ReferenceEntity> referenceEntities) {
+		this.referenceEntities = referenceEntities;
+	}
+
+}
+
+package com.cnk.travelerp.common.references.bean;
+
+import java.util.List;
+
+public class RefRestResponse extends RestResponse{
+	
+	
+	List<ReferenceEntity> referenceEntities;
+
+	/**
+	 * @return the referenceEntities
+	 */
+	public List<ReferenceEntity> getReferenceEntities() {
+		return referenceEntities;
+	}
+
+	/**
+	 * @param referenceEntities the referenceEntities to set
+	 */
+	public void setReferenceEntities(List<ReferenceEntity> referenceEntities) {
+		this.referenceEntities = referenceEntities;
+	}
+
+
+	
+	
+
+
+}
+package com.cnk.travelerp.common.references.bean;
+
+public class RestError {
+    private String code;
+    private String message;
+ 
+    public RestError() {
+    }
+ 
+    public RestError(String code,String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+	/**
+	 * @return the code
+	 */
+	public String getCode() {
+		return code;
+	}
+
+	/**
+	 * @param code the code to set
+	 */
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	/**
+	 * @return the message
+	 */
+	public String getMessage() {
+		return message;
+	}
+
+	/**
+	 * @param message the message to set
+	 */
+	public void setMessage(String message) {
+		this.message = message;
+	}
+    
+    
+}
+
+
+package com.cnk.travelerp.common.references.bean;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include.NON_NULL)
+public abstract class RestResponse {
+    private RestError error;
+ 
+    public RestError getError() {
+        return error;
+    }
+ 
+    public void setError(RestError error) {
+        this.error = error;
+    }
+}
+
+
+
+package com.cnk.travelerp.common.references.controller;
+
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cnk.travelerp.common.references.bean.RefRestResponse;
+import com.cnk.travelerp.common.references.bean.ReferenceEntity;
+import com.cnk.travelerp.common.references.bean.ReferenceMaster;
+
+@RestController
+@RequestMapping("/refdata")
+public class ReferenceMasterRestController {
+
+	@RequestMapping(value="/**", produces={MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
+	public @ResponseBody RefRestResponse getReferenceData(HttpServletRequest request){
+		Enumeration<String> httpHeaders = request.getHeaderNames();
+		while(httpHeaders.hasMoreElements()) {
+			String headerName = httpHeaders.nextElement();
+			System.out.println(headerName + " = " + request.getHeader(headerName));
+		}
+		
+		return refData();
+	}
+
+	
+	private static RefRestResponse refData(){
+		List<ReferenceEntity> refEntities = new ArrayList<>();
+		
+		ReferenceEntity refEntity = new ReferenceEntity();
+		refEntity.setName("CITY");
+		List<ReferenceMaster> rows = new ArrayList<>();
+		rows.add( new ReferenceMaster("MUM","Mumbai","MH"));
+		rows.add( new ReferenceMaster("DEL","Delhi","DL"));
+		rows.add( new ReferenceMaster("LKO","LUCKNOW","LKO"));
+		refEntity.setRows(rows);
+		refEntities.add(refEntity);
+
+
+		refEntity = new ReferenceEntity();
+		refEntity.setName("STATE");
+		rows = new ArrayList<>();
+		rows.add( new ReferenceMaster("MH","Maharastra","IND"));
+		rows.add( new ReferenceMaster("DL","Delhi","IND"));
+		rows.add( new ReferenceMaster("UP","Uttar Pradesh","IND"));
+		refEntity.setRows(rows);
+		refEntities.add(refEntity);
+
+		
+		RefRestResponse restResp = new RefRestResponse();
+		restResp.setReferenceEntities(refEntities);
+		return restResp;
+	}
+	
+}
