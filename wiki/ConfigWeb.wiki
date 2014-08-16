@@ -1,0 +1,151 @@
+HTTP Status 406 - The resource identified by this request is only capable of generating responses with characteristics not acceptable according to the request "accept" headers ().
+
+
+
+<!-- references-servlet.xml -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<context:annotation-config />
+	<mvc:annotation-driven />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<!-- 
+	<import resource="classpath*:entity-persistence-config.xml" />
+	<import resource="classpath*:refcache-service-config.xml" /> --> 
+	<import resource="classpath*:menu-config.xml" /> 
+	<!-- <import resource="webflow-content.xml" /> -->  
+	<context:component-scan
+		base-package="com.cnk.travelerp.common.references.controller" />
+	<context:property-placeholder location="classpath:*.properties" />
+
+	<context:annotation-config />
+
+
+
+	<bean  
+        class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">  
+        <property name="order" value="1" />  
+        <property name="mediaTypes">  
+            <map>  
+                <entry key="json" value="application/json" />  
+                <entry key="xml" value="application/xml" />  
+            </map>  
+        </property>  
+  
+        <property name="defaultViews">  
+		
+		<list>
+		  <!-- JSON View -->
+		  <bean
+			class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+		  </bean>
+ 
+ 
+		  <!-- XStream XML View -->
+		  <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+		  	<property name="marshaller" ref="xStreamMarshaller" />
+		  </bean>
+		 </list>
+	  </property>
+        <property name="ignoreAcceptHeader" value="true" />  
+    </bean>  
+	
+	
+	<bean id="xStreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+	    <property name="autodetectAnnotations" value="true"/>
+    	<property name="supportedClasses">
+        	<list>
+            	<value>com.cnk.travelerp.common.references.bean.RefRestResponse</value>
+            	<value>com.cnk.travelerp.common.references.bean.ReferenceMaster</value>
+            	<value>com.cnk.travelerp.common.references.bean.ReferenceEntity</value>
+            	<value>com.cnk.travelerp.common.references.bean.RestError</value>
+        	</list>
+    	</property>
+       	<property name="aliases">
+        	<map>
+                <entry key="refResponse" value="com.cnk.travelerp.common.references.bean.RefRestResponse" />
+                <entry key="refMaster" value="com.cnk.travelerp.common.references.bean.ReferenceMaster" />
+                <entry key="referenceEntity" value="com.cnk.travelerp.common.references.bean.ReferenceEntity" />
+                <entry key="error" value="com.cnk.travelerp.common.references.bean.RestError" />
+        	</map>
+        </property>
+    </bean>
+	
+	<bean id="messageSource" 
+				class="com.cnk.travelerp.common.messagesource.LabelMessageSource" >
+				<property name="messageLoader"  ref="labelMessageLoader" />
+				<property name="faultBackLocale" value="en_US"/>
+	</bean>	
+	
+	<bean id="labelMessageLoader" 
+				class="com.cnk.travelerp.common.message.DBLabelMessageLoader">
+	</bean>	
+	 
+	 
+	<bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="url" value="jdbc:oracle:thin:@10.21.32.97:1521:ora11g" />
+        <property name="username" value="rahulj" />
+        <property name="password" value="rahulj" />
+    </bean>
+
+     <bean id="localeResolver"
+          class="com.cnk.travelerp.common.i18n.ClientLocaleResolver">
+             <!--   <property name="param" value=“${lang.param}" /> -->
+                <property name="param" value="lang" />
+                <property name="defaultLocale" value="en_US"/>
+     </bean>
+	<!--  End of common config -->
+</beans>
+
+<!-- web.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ReferenceMasters</display-name>
+   <absolute-ordering>
+         <others />
+     </absolute-ordering>
+  
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/references-servlet.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  <servlet-name>references</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>references</servlet-name>
+  <url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+<!-- index.jsp -->
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Reference Master Welcome</title>
+</head>
+<body>
+	<h1>This application is to provide rest services for reference masters.</h1>
+</body>
+</html>
