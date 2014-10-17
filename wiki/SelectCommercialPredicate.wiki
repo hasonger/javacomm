@@ -1,0 +1,43 @@
+package com.cnk.travelerp.model.commercials.predicates;
+
+import org.apache.commons.collections.Predicate;
+
+import com.cnk.travelerp.model.commercials.Commercial;
+import com.cnk.travelerp.model.commercials.CommercialInput;
+
+import static com.cnk.travelerp.model.commercials.predicates.PredicateUtils.*;
+
+public class SelectCommercialPredicate implements Predicate {
+	private CommercialInput input ;
+	public SelectCommercialPredicate(CommercialInput input){
+		this.input=input;
+	}
+	@Override
+	public boolean evaluate(Object obj) {
+		if (obj.getClass().isAssignableFrom(Commercial.class)){
+			Commercial commercial = (Commercial)obj;
+			boolean isInDateRange = isInDateRang(commercial.getValidFrom(),
+						commercial.getValidTo(),
+						input.getTransactionDate());
+			if (!isInDateRange){
+				return false;
+			}
+
+			String[] checkBy = {commercial.getProdId(),commercial.getSupplierId(),commercial.getSupProdMarketId()};
+			String[] checkWith = {input.getProdId(),input.getSupplierId(),input.getSupProdMarketId()};
+
+			//check for All
+			if (isWithAll(checkBy)){
+				return true;
+			}
+			int countForAll =occuranceOfAll(checkBy);
+			int[][] probIndexList = buildIndexes(checkBy.length,(checkBy.length - countForAll));
+			for(int i=0;i<probIndexList.length;i++){
+				if (isTrue(checkBy,checkWith,probIndexList[i])){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+}
