@@ -1,0 +1,129 @@
+package com.cnk.travelerp.model.commercials;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class Commercial{
+
+	private String commercialId;
+	private String prodCategory;
+	private String prodSubCategory;
+	private String prodId;
+	
+	private String supplierId;
+	private String supProdMarketId;
+	
+	
+	private Date validFrom;
+	private Date validTo;
+	
+	private BigDecimal percentage;
+	
+	private String parentId;
+
+	public Commercial(){
+		
+	}
+	
+	
+	public Commercial(String commercialId, String prodCategory,
+			String prodSubCategory, String prodId, String supplierId,
+			String supProdMarketId, Date validFrom, Date validTo,
+			BigDecimal percentage, String parentId) {
+		super();
+		this.commercialId = commercialId;
+		this.prodCategory = prodCategory;
+		this.prodSubCategory = prodSubCategory;
+		this.prodId = prodId;
+		this.supplierId = supplierId;
+		this.supProdMarketId = supProdMarketId;
+		this.validFrom = validFrom;
+		this.validTo = validTo;
+		this.percentage = percentage;
+		this.parentId = parentId;
+	}
+
+	public String getCommercialId() {
+		return commercialId;
+	}
+
+	public void setCommercialId(String commercialId) {
+		this.commercialId = commercialId;
+	}
+
+	public String getProdCategory() {
+		return prodCategory;
+	}
+
+	public void setProdCategory(String prodCategory) {
+		this.prodCategory = prodCategory;
+	}
+
+	public String getProdSubCategory() {
+		return prodSubCategory;
+	}
+
+	public void setProdSubCategory(String prodSubCategory) {
+		this.prodSubCategory = prodSubCategory;
+	}
+
+	public String getProdId() {
+		return prodId;
+	}
+
+	public void setProdId(String prodId) {
+		this.prodId = prodId;
+	}
+
+	public String getSupplierId() {
+		return supplierId;
+	}
+
+	public void setSupplierId(String supplierId) {
+		this.supplierId = supplierId;
+	}
+
+	public String getSupProdMarketId() {
+		return supProdMarketId;
+	}
+
+	public void setSupProdMarketId(String supProdMarketId) {
+		this.supProdMarketId = supProdMarketId;
+	}
+
+	public Date getValidFrom() {
+		return validFrom;
+	}
+
+	public void setValidFrom(Date validFrom) {
+		this.validFrom = validFrom;
+	}
+
+	public Date getValidTo() {
+		return validTo;
+	}
+
+	public void setValidTo(Date validTo) {
+		this.validTo = validTo;
+	}
+
+	public BigDecimal getPercentage() {
+		return percentage;
+	}
+
+	public void setPercentage(BigDecimal percentage) {
+		this.percentage = percentage;
+	}
+
+	public String getParentId() {
+		return parentId;
+	}
+
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+	} 
+	
+	
+	
+	
+}
