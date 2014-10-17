@@ -1,0 +1,127 @@
+package com.cnk.travelerp.model.commercials;
+
+import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.apache.commons.collections.CollectionUtils;
+import com.cnk.travelerp.model.commercials.predicates.SelectCommercialPredicate;
+
+public class CommercialTest {
+
+	
+	
+	
+	
+	
+	
+	public List<Commercial> findCommercials(CommercialInput input){
+		List<Commercial> copyList = new ArrayList<>();
+		copyList.addAll(commercials);
+		
+//		List<Commercial> retList =
+//					(List<Commercial>) CollectionUtils.predicatedCollection(copyList, new CommercialSelectPredicate(input));
+		CollectionUtils.filter(copyList, new SelectCommercialPredicate(input));
+		return copyList;
+	}
+	
+	static List<Commercial> commercials = new ArrayList<>();
+	static String DATE_PATTERN = "dd-MMM-yyyy";
+	static DateFormat df = new SimpleDateFormat(DATE_PATTERN);
+
+	
+	static String[][] records = {
+			{"101","TRANSPORT","FLIGHT","All",      "All","All","01-JAN-2014","31-DEC-2014","5.0",""},
+			{"102","TRANSPORT","FLIGHT","All",      "Abacus","All","24-JAN-2014","31-DEC-2099","4.0","101"},
+			{"103","TRANSPORT","FLIGHT","SpiceJet", "Abacus","All","01-MAY-2014","31-DEC-2099","2.0","102"},
+			{"104","TRANSPORT","FLIGHT","GoAir",    "All","All","01-APR-2014","31-DEC-2099","4.0","101"},
+			{"105","TRANSPORT","FLIGHT","GoAir",    "All","All","01-APR-2014","31-DEC-2099","3.0","101"}
+			
+	};
+	
+	
+	static {
+		
+		for(int i =0; i<records.length;i++){
+			try {
+				Date dtFrom = df.parse(records[i][6]);
+				Date dtTo = df.parse(records[i][7]);
+
+				commercials.add(new Commercial(records[i][0],records[i][1],records[i][2],records[i][3], 
+								records[i][4],records[i][5], dtFrom, dtTo, new BigDecimal(records[i][8]), records[i][9])
+						);
+				
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+	
+
+	
+	
+	
+	public static final void main(String[] args) throws Exception{
+//		for(Commercial com:commercials){
+//			System.out.println(com);
+//		}
+		
+//		int[][] result = buildIndexes(3,3);
+//		int[][] result1 = buildIndexes(3,2);
+//		int[][] result2 = buildIndexes(3,1);
+//
+//		result = buildIndexes(4,4);
+//		result1 = buildIndexes(4,3);
+//		result2 = buildIndexes(4,2);
+//		result2 = buildIndexes(4,1);
+
+		
+		CommercialInput input = new CommercialInput("TRANSPORT","FLIGHT","AAA",  "AAA","AAA",df.parse("02-JAN-2014"));
+		
+		CommercialTest test = new CommercialTest();
+
+		
+
+		List<Commercial> result = test.findCommercials(input);
+//		for(Commercial com:result){
+//			System.out.println(com);
+//		}
+//
+//		input = new CommercialInput("TRANSPORT","FLIGHT","All",  "Abacus","All",df.parse("02-JAN-2014"));
+//		result = test.findCommercials(input);
+//		for(Commercial com:result){
+//			System.out.println(com);
+//		}
+//
+//		input = new CommercialInput("TRANSPORT","FLIGHT","All",  "Abacus","All",df.parse("25-JAN-2014"));
+//		result = test.findCommercials(input);
+//		for(Commercial com:result){
+//			System.out.println(com);
+//		}
+		
+		input = new CommercialInput("TRANSPORT","FLIGHT","SpiceJet",  "Abacus","AAA",df.parse("25-JAN-2014"));
+		result = test.findCommercials(input);
+//		for(Commercial com:result){
+//			System.out.println(com);
+//		}
+
+		
+		input = new CommercialInput("TRANSPORT","FLIGHT","SpiceJet",  "Abacus","AAA",df.parse("02-MAY-2014"));
+		result = test.findCommercials(input);
+//		for(Commercial com:result){
+//			System.out.println(com);
+//		}
+		
+		input = new CommercialInput("TRANSPORT","FLIGHT","SpiceJet",  "Abacus","ZZZZ",df.parse("02-MAY-2014"));
+		result = test.findCommercials(input);
+		for(Commercial com:result){
+			System.out.println(com);
+		}
+
+	}
+}
