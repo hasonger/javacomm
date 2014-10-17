@@ -1,0 +1,93 @@
+package com.cnk.travelerp.model.commercials;
+
+import java.util.Date;
+
+public class CommercialInput{
+
+	private String prodCategory;
+	private String prodSubCategory;
+	private String prodId;
+	private String supplierId;
+	private String supProdMarketId;
+	
+	
+	private Date transactionDate;
+
+	public CommercialInput(){
+		
+	}
+	
+	
+
+	public CommercialInput(String prodCategory, String prodSubCategory,
+			String prodId, String supplierId, String supProdMarketId,
+			Date transactionDate) {
+		super();
+		this.prodCategory = prodCategory;
+		this.prodSubCategory = prodSubCategory;
+		this.prodId = prodId;
+		this.supplierId = supplierId;
+		this.supProdMarketId = supProdMarketId;
+		this.transactionDate = transactionDate;
+	}
+
+
+
+	public String getProdCategory() {
+		return prodCategory;
+	}
+
+	public void setProdCategory(String prodCategory) {
+		this.prodCategory = prodCategory;
+	}
+
+	public String getProdSubCategory() {
+		return prodSubCategory;
+	}
+
+	public void setProdSubCategory(String prodSubCategory) {
+		this.prodSubCategory = prodSubCategory;
+	}
+
+	public String getProdId() {
+		return prodId;
+	}
+
+	public void setProdId(String prodId) {
+		this.prodId = prodId;
+	}
+
+	public String getSupplierId() {
+		return supplierId;
+	}
+
+	public void setSupplierId(String supplierId) {
+		this.supplierId = supplierId;
+	}
+
+	public String getSupProdMarketId() {
+		return supProdMarketId;
+	}
+
+	public void setSupProdMarketId(String supProdMarketId) {
+		this.supProdMarketId = supProdMarketId;
+	}
+
+
+
+	public Date getTransactionDate() {
+		return transactionDate;
+	}
+
+
+
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
+	}
+
+
+	
+	
+	
+	
+}
