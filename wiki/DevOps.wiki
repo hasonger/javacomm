@@ -1,0 +1,24 @@
+Hourly Build 
+         Keep polling SCM at every hour, perform compilation and unit tests
+         Time Window : 11 am – to 5 pm on working days
+Compile the sources  ( mvn compile)
+Daily Build
+        Create snapshot library every day in evening after 5 pm
+        For two types of libraries - 
+         Shared Library – Jars
+	Build, Unit Test, Create snapshot library 
+                 Publish snapshot to maven repository i.e. Nexus
+          Deployable Library – wars, ears
+                 Build, Unit Test, Create snapshot library (wars) 
+                 Deploy to Application Server (Development)
+                 Perform Integration Test 
+                 Publish snapshot to Maven Repository 
+Milestone Release
+         Two types of Milestones
+                   Minor Release - Testing of Sub features 
+                   Major Release  - A complete cycle Release
+          A milestone release will be moved from development to testing environment on demand basis i.e. whenever development team feels a stable build, it would be promoted to testing environment.
+          For on Demand Basis, an approval is required. Sprint Owner (Cluster Owner) has to approve the build to perform the release [move to next environment]. 
+          A milestone release would be the Last Daily Build artefact [there will be no build in milestone ]
+          Every release would be tagged [scm:tag].
+          Every release would be release to maven repository [Nexus].
